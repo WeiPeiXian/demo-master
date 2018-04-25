@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/now/now",    
+    "pages/stu/stu",
+    "pages/record/record",
+    "pages/revise/revise",
+    "pages/stu-family/stu-family",
+    "pages/stu-jiandang/stu-jiandang",
+    "pages/jiandang-revise/jiandang-revise",
+    "pages/week/week",
+    "pages/face/face",
+    "pages/family/family",
+    "pages/add1/add1",
+    "pages/add2/add2",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "移动助困",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#e64340",
+    "backgroundColor": "#000",
+    "list": [
+      {
+        "text": "当前助困",
+        "pagePath": "pages/now/now",
+        "iconPath": "image/case.png",
+        "selectedIconPath": "image/case1.png"
+      },
+      {
+        "text": "历史助困",
+        "pagePath": "pages/history/history",
+        "iconPath": "image/yuyue.png",
+        "selectedIconPath": "image/yuyue1.png"
+      }
+    ]
+  }
+}
