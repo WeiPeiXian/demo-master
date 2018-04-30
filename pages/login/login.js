@@ -6,14 +6,6 @@ Page({
   },
  phoneInput :function(e){
    var that=this;
-   wx.getStorage({
-     key: 'teacherId',
-     success: function (res) {
-       that.setData({
-         username: res.data
-       })
-     },
-   })
    that.setData({
      username: e.detail.value
    })
@@ -21,14 +13,6 @@ Page({
 
  passwordInput :function(e){
    var that=this
-   wx.getStorage({
-     key: 'password',
-     success: function (res) {
-       that.setData({
-         username: res.data
-       })
-     },
-   })
    that.setData({
      password: e.detail.value
    })
@@ -56,6 +40,14 @@ Page({
         },
         success: function (res) {
           if (res.data.success == true) {
+            wx.setStorage({
+              key: 'teacherId',
+              data: that.username,
+            })
+            wx.setStorage({
+              key: 'password',
+              data: that.password,
+            })
             var that2 =res.data
             console.log(that2.data)
             wx.showToast({
@@ -75,14 +67,7 @@ Page({
               key: 'token',
               data: that2.data.token,
             })
-            wx.setStorage({
-              key: 'teacherId',
-              data: that.username,
-            })
-            wx.setStorage({
-              key: 'password',
-              data: that.password,
-            })
+            
             
             wx.switchTab({
               url: '../now/now'
