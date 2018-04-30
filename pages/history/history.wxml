@@ -19,15 +19,19 @@
   </view>
   	<view class="top flex-item ">
 		<block wx:for="{{studentlist}}">
-			<view class="lieBiao flex-wrap flex-direction-row" >
-				<view class="flex-item">
-					<view class='firstPart'>{{studentlist[index].name}}</view>
-          <view class='secondPart'>
-          <text style='color:grey'>{{studentlist[index].attentionType}}</text>
+			<view class="lieBiao" >
+					<view class='firstPart'>
+            <view class='flex-column'>
+              <view class='flex-item' >{{studentlist[index].name}}</view>
+              <view class='flex-item' style='color:grey'>{{studentlist[index].studentId}}</view>
+            </view>
+          </view>
+          <view class='secondPart '>
+            <view class='flex-column' ><view class='flex-item' style='color:grey'>{{studentlist[index].helpType}}</view>
+            <view class='flex-item' style='color:grey'>{{studentlist[index].attentionType}}</view></view>
+            
           </view>
           <view class='thirdPart'>{{studentlist[index].destoryingTime}}</view>
-				</view>
-				
 			</view>
 		</block>
 
