@@ -76,13 +76,14 @@ Page({
     index1:0,
     index2:0,
     index3:0,
+ token:'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNTI1MDkwMzYyLCJpc3MiOiJTaGVuIn0dhMN_vBBmk16Sa3EOwIHnWNET-smmvXeAooRlxxvEtLzjpnrX-Fo-e01yKIhmZoj0XCNLw9nwD1CXPPlBrqmUw'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
