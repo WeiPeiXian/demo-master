@@ -18,18 +18,16 @@
     </view>
   </view>
   	<view class="top flex-item ">
-		<block wx:for="{{dishesList[1]}}">
+		<block wx:for="{{studentlist}}">
 			<view class="lieBiao flex-wrap flex-direction-row" >
 				<view class="flex-item">
-					<view class='firstPart'>zkc</view>
+					<view class='firstPart'>{{studentlist[index].name}}</view>
           <view class='secondPart'>
-          <text style='color:grey'>学业困难 家庭困难 一般关注</text>
+          <text style='color:grey'>{{studentlist[index].attentionType}}</text>
           </view>
-          <view class='thirdPart'>2018-03-28</view>
+          <view class='thirdPart'>{{studentlist[index].destoryingTime}}</view>
 				</view>
-				<view class="add-btn">
-            <icon type="{{item.status ? 'success' : 'circle'}}" color="orange" size="30"></icon>
-        </view>
+				
 			</view>
 		</block>
 

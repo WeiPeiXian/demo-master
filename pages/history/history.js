@@ -1,60 +1,12 @@
 // pages/now/now.js
-var app = getApp();
+var app = getApp(); 
 Page({
   data: {
+    studentlist: [],
+    teacherid:'',
+    token:'',
+    url:'',
     array1: ['年级', '2013级', '2014级', '2015级', '2016级', '2017级'],
-    dishesList: [
-      [
-        {
-          name: "红烧肉",
-          price: 38,
-          num: 1,
-          id: 1
-        },
-        {
-          name: "宫保鸡丁",
-          price: 58,
-          num: 1,
-          id: 29
-        },
-        {
-          name: "水煮鱼",
-          price: 88,
-          num: 1,
-          id: 2
-        }
-      ],
-      [
-        {
-          name: "小炒日本豆腐",
-          price: 18,
-          num: 1,
-          id: 3
-        },
-        {
-          name: "烤鱼",
-          price: 58,
-          num: 1,
-          id: 4
-        }
-      ],
-      [
-        {
-          name: "大拌菜",
-          price: 18,
-          num: 1,
-          id: 5
-        },
-        {
-          name: "川北凉粉",
-          price: 8,
-          num: 1,
-          id: 6
-        }
-      ],
-      []
-    ],
-    dishes: [],
     objectArray: [
       {
         id: 0,
@@ -85,7 +37,7 @@ Page({
     objectArray: [
       {
         id: 0,
-        name: '帮扶类型'
+        name: ''
       },
       {
         id: 1,
@@ -104,7 +56,7 @@ Page({
     objectArray: [
       {
         id: 0,
-        name: '关注状态'
+        name: ''
       },
       {
         id: 1,
@@ -132,7 +84,69 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+    var that=this;
+    var that = this;
+    wx.getStorage({
+      key: 'teacherId',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          teacherid: res.data
+        })
+        var arr = [
+          'http://180.76.249.233:8080/newhelp/api/historyArchives/',
+          that.data.teacherid
+        ]
+        var str = arr.join('')
+        that.setData({
+          url: str
+        })
+        wx.getStorage({
+          key: 'token',
+          success: function (res) {
+            that.setData({
+              token: res.data
+            })
+            wx.request({
+      url:that.data.url,
+      header: {
+        "Authorization": that.data.token
+      },
+      method: "GET",
+      success: function (res) {
+        if (res.data.success == true) {
+          var that2 = res.data
+          console.log(that2.data)
+          that.setData({
+            studentlist:that2.data
+          })
+          
+        }
+        else {
+          console.log(res.data)
+          wx.showToast({
+            title: "连接失败",
+            icon: "fail"
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res);
+        console.log(1)
+      }
+    })
+          },
 
+        })
+      },
+    })
+    
+    
+    
+    // that.setData({
+
+    // })
   },
 
   /**
@@ -207,7 +221,9 @@ Page({
       url: '../main/main'
     })
   },
-  zengjia: function () {
+  getData:function(){
+    
+  
 
   }
 })
