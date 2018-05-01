@@ -216,14 +216,20 @@ Page({
       index3: e.detail.value
     })
   },
-  fanhui: function () {
-    wx.navigateBack({
-      url: '../main/main'
+  message: function (e) {
+    var hArchiveId = e.currentTarget.dataset.historyarchiveid
+    var stuid = e.currentTarget.dataset.studentid
+    wx.setStorage({
+      key: 'hArchiveId',
+      data: hArchiveId
+    })
+    wx.setStorage({
+      key: 'studentid',
+      data: stuid
+    })
+    wx.navigateTo({
+      url: './his-stu'
     })
   },
-  getData:function(){
-    
   
-
-  }
 })

@@ -57,7 +57,7 @@ page{
   display: flex;
   justify-content: space-between;
   font-size: 28rpx;
-  margin-left: 40rpx;
+  margin-left: 80rpx;
   
 }
 .thirdPart{
@@ -86,6 +86,15 @@ text{
   background-color: #fff;
   justify-content:center;
   border-color: #f0f0f0
+}
+.dingbu{
+  width: 100%;
+  height: 70rpx;
+  margin: 0rpx;
+  float: left;
+  margin-top:1rpx;
+  background-color: #fff;
+  left:0;
 }
 
 .fanhui{

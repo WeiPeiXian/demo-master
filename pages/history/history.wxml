@@ -1,6 +1,6 @@
 <!--pages/history/history.wxml-->
 <view class="container flex-wrap flex-direction-row">
-  <view class="flex-row" style=";display: flex;flex-direction: row;">
+  <view class="flex-row" style=" top:0;position:fixed;width: 750rpx;display: flex;flex-direction: row;">
     <view class="section flex-view-item">
       <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
         <view class="picker">{{array1[index1]}}</view>
@@ -17,21 +17,23 @@
     </picker>
     </view>
   </view>
+  <view class='dingbu'>{{   }}</view>
   	<view class="top flex-item ">
-		<block wx:for="{{studentlist}}">
-			<view class="lieBiao" >
+		<block wx:for="{{studentlist}}" wx:for-index="i">
+    <!-- 注意下面data-** 的** 是小写字母组合 -->
+			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' >
 					<view class='firstPart'>
             <view class='flex-column'>
-              <view class='flex-item' >{{studentlist[index].name}}</view>
-              <view class='flex-item' style='color:grey'>{{studentlist[index].studentId}}</view>
+              <view class='flex-item' >{{item.name}}</view>
+              <view class='flex-item' style='color:grey'>{{item.studentId}}</view>
             </view>
           </view>
           <view class='secondPart '>
-            <view class='flex-column' ><view class='flex-item' style='color:grey'>{{studentlist[index].helpType}}</view>
-            <view class='flex-item' style='color:grey'>{{studentlist[index].attentionType}}</view></view>
+            <view class='flex-column' ><view class='flex-item' style='color:grey'>{{item.helpType}}</view>
+            <view class='flex-item' style='color:grey'>{{item.attentionType}}</view></view>
             
           </view>
-          <view class='thirdPart'>{{studentlist[index].destoryingTime}}</view>
+          <view class='thirdPart'>{{item.destoryingTime}}</view>
 			</view>
 		</block>
 

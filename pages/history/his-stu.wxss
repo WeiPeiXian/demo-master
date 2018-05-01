@@ -1,0 +1,78 @@
+.container{
+  background-color: #fff;
+  height: 1200rpx;
+  /*display: flex;
+  top: 0;
+  justify-content: flex-start;*/
+}
+.dingbu{
+  width: 100%;
+  height: 70rpx;
+  margin: 0rpx;
+  float: left;
+  margin-top:1rpx;
+  background-color: #fff;
+  left:0;
+}
+.title{
+  margin-top: 30rpx;
+  font-size: 35rpx;
+}
+.swiper-tab {
+  line-height: 80rpx;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  
+  align-items: center;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  color: #777;
+  
+  background-color: #fff;
+  text-align: center;
+}
+
+.active {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;  
+}
+
+.swiper-box view {
+  text-align: left;
+  display: flex;
+  margin-left:10rpx;
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+  color: #ccc;  
+  flex-direction: column;
+  
+}
+
+image {
+  width: 100%;
+}
+
+.nav{
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.item{
+  height: 50rpx;
+  width: 100%;
+  font-size: 40rpx;
+  margin-bottom: 1rpx;
+}
