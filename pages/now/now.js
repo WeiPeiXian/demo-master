@@ -147,27 +147,6 @@ Page({
   
 
   bindPickerChange1: function (e) {
-    wx.getStorage({
-      key: 'password',
-      success: function(res) {
-        console.log(res.data)
-      },
-    })
-    wx.getStorage({
-      key: 'teacherId',
-      success: function (res) {
-        console.log(res.data)
-      },
-    })
-    wx.getStorage({
-      key: 'token',
-      success: function(res) {
-        
-        console.log(res.data)
-
-      },
-    })
-    
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index1: e.detail.value
@@ -184,13 +163,5 @@ Page({
     this.setData({
       index3: e.detail.value
     })
-  },
-  fanhui: function () {
-    wx.navigateBack({
-      url: '../main/main'
-    })
-  },
-  zengjia: function(){
-
   }
 })
