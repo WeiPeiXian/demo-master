@@ -1,19 +1,17 @@
 {
   "pages": [
+    
     "pages/login/login",
-    "pages/now/now",    
+    "pages/now/now",
     "pages/stu/stu",
     "pages/record/record",
-    "pages/revise/revise",
-    "pages/stu-family/stu-family",
-    "pages/stu-jiandang/stu-jiandang",
-    "pages/jiandang-revise/jiandang-revise",
     "pages/week/week",
     "pages/face/face",
     "pages/family/family",
     "pages/add1/add1",
-    "pages/add2/add2",
+    "pages/history/his-stu",
     "pages/history/history"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
