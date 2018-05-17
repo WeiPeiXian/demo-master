@@ -3,6 +3,9 @@ var app = getApp();
 Page({
   data: {
     token:"",
+    studentlist: [],
+    teacherid: '',
+    url: '',
     array1: ['年级', '2013级', '2014级', '2015级', '2016级', '2017级'],
     objectArray: [
       {
@@ -83,7 +86,62 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that=this;
+    var that = this;
+    wx.getStorage({
+      key: 'teacherId',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          teacherid: res.data
+        })
+        var arr = [
+          'http://180.76.249.233:8080/newhelp/api/archiveStudents/',
+          that.data.teacherid
+        ]
+        var str = arr.join('')
+        that.setData({
+          url: str
+        })
+        wx.getStorage({
+          key: 'token',
+          success: function (res) {
+            that.setData({
+              token: res.data
+            })
+            wx.request({
+      url:that.data.url,
+      header: {
+        "Authorization": that.data.token
+      },
+      method: "GET",
+      success: function (res) {
+        if (res.data.success == true) {
+          var that2 = res.data
+          console.log(that2.data)
+          that.setData({
+            studentlist:that2.data
+          })
+          
+        }
+        else {
+          console.log(res.data)
+          wx.showToast({
+            title: "连接失败",
+            icon: "fail"
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res);
+        console.log(1)
+      }
+    })
+          },
+
+        })
+      },
+    })
   },
 
   /**
@@ -136,12 +194,17 @@ Page({
   },
   two: function () {
     wx.navigateTo({
-      url: '../add1/add1'
+      url: '../add/add'
     })
   },
-  message: function () {
+  message: function (e) {
     wx.navigateTo({
       url: '../stu/stu'
+    })
+    var stuid = e.currentTarget.dataset.studentid
+    wx.setStorage({
+      key: 'studentid',
+      data: stuid,
     })
   },
   

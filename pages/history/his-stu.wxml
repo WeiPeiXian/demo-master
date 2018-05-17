@@ -1,7 +1,9 @@
+<import src="../../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="swiper-tab">  
     <view bindtap="swithNav" wx:for="{{tabCont}}" wx:key="item.index" class="swiper-tab-list {{currentTab==item.index?'active':''}}" data-current='{{item.index}}' >{{item.title}}</view>  
 </view>  
-<swiper class="swiper-box" current="{{currentTab}}" duration="300" style="height:1000rpx" bindchange="GetCurrentTab" data-current='6' >  
+<swiper class="swiper-box" current="{{currentTab}}" duration="300" style="height:{{height}}rpx" bindchange="GetCurrentTab" data-current='6' >  
     <swiper-item  wx:key="item.index">  
       <view class='flex-column'>
         <view class='item'>{{"住址 "+ personal.studentId}}</view>
@@ -11,14 +13,14 @@
     <swiper-item  wx:key="item.index" >
       <view class='item'>{{"住址 "+ family.familyAddress}}</view>
       <view class='item'>{{"电话号码 "+ family.familyTelNumber}}</view>
-      <view class='item'>{{"   "}}</view>
+      <view class='nul' >{{"   "}}</view>
       <view class='item'>{{"父亲姓名 "+ family.fatherName}}</view>
       <view class='item'>{{"工作单位 "+ family.fatherWorkUnit}}</view>
       <view class='item'>{{"单位地址 "+ family.fatherWorkUnitAddress}}</view>
       <view class='item'>{{"职务 "+ family.fatherDuty}}</view>
       <view class='item'>{{"邮编 "+ family.fatherPostcode}}</view>
       <view class='item'>{{"电话 "+ family.fatherTelNumber}}</view>
-      <view class='item'>{{"   "}}</view>
+      <view class='nul'>{{"   "}}</view>
       <view class='item'>{{"母亲姓名 "+ family.motherName}}</view>
       <view class='item'>{{"工作单位 "+ family.motherWorkUnit}}</view>
       <view class='item'>{{"单位地址 "+ family.motherWorkUnitAddress}}</view>

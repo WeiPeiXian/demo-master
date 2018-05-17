@@ -1,3 +1,4 @@
+@import "/template/template.wxss";
 .container {
     flex-flow:column nowrap;
     justify-content: center;

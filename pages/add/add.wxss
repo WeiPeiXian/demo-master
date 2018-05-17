@@ -1,11 +1,3 @@
-.nav{
-  height: 100rpx;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #cccccc;
-}
 /* pages/add/add.wxss */
 .mcontainer {
   height: 100%;
@@ -95,33 +87,10 @@
  background-color: #fff;
  margin-left: 2rpx; 
  line-height: 50px;
-}
-.line {
- width: 100%; 
- height: 1px; 
- background-color: #cccccc; 
- margin-top: 1px; 
 } 
-.section{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  float: left;
-  height: 80rpx;
-  width: 200rpx;
-  margin-top: 30rpx;
-  margin-left: 270rpx;
-  justify-content:center;
-  font-size: 80rpx;
-}
 
-.title{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  float: left;
-  height: 80rpx;
-  width: 200rpx;
-  margin: 40rpx;
-  top: 100rpx;
+.loginBtn { 
+ width: 80%; 
+ margin-top: 10px; 
+ margin-bottom: 20px; 
 }

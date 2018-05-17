@@ -1,15 +1,14 @@
 {
   "pages": [
-    
     "pages/login/login",
+    "pages/history/record",
+    "pages/add/add",
+    "pages/history/his-stu",
     "pages/now/now",
     "pages/stu/stu",
-    "pages/record/record",
     "pages/week/week",
     "pages/face/face",
     "pages/family/family",
-    "pages/add1/add1",
-    "pages/history/his-stu",
     "pages/history/history"
     
   ],

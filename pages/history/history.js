@@ -203,6 +203,11 @@ Page({
     this.setData({
       index1: e.detail.value
     })
+    var s = e.detail.value
+    if(s!=0){
+      search(array1[s])
+    }
+
   },
   bindPickerChange2: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -228,8 +233,12 @@ Page({
       data: stuid
     })
     wx.navigateTo({
-      url: './his-stu'
+      url: './record'
     })
   },
+  search: function (e) {
+    
+  }
+
   
 })

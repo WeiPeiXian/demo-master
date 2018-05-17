@@ -20,8 +20,8 @@
   <view class='dingbu'>{{   }}</view>
   	<view class="top flex-item ">
 		<block wx:for="{{studentlist}}" wx:for-index="i">
-    <!-- 注意下面data-** 的** 是小写字母组合 -->
-			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' >
+      <view class='line'></view>
+			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' style='background-color:{{color}}'>
 					<view class='firstPart'>
             <view class='flex-column'>
               <view class='flex-item' >{{item.name}}</view>
@@ -30,11 +30,13 @@
           </view>
           <view class='secondPart '>
             <view class='flex-column' ><view class='flex-item' style='color:grey'>{{item.helpType}}</view>
-            <view class='flex-item' style='color:grey'>{{item.attentionType}}</view></view>
-            
+            <view class='flex-item' style='color:grey'>{{item.attentionType}}
+            </view>
+            </view>
           </view>
           <view class='thirdPart'>{{item.destoryingTime}}</view>
 			</view>
+      
 		</block>
 
 	</view>

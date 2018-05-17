@@ -8,7 +8,9 @@
   </picker>
   </view>
 </view>
-
+<block>
+<view class='line'></view>
+</block>
 <view class='title'>
     <text style='color:grey'>zkc</text>
 </view>

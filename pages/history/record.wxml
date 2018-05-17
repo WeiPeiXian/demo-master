@@ -1,0 +1,41 @@
+<!--pages/history/record.wxml-->
+<import src="../../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+
+<view class="mcontainer">
+<view class='nav'>
+  <view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<view class='dingbu'>{{   }}</view>
+  	<view class="top flex-item ">
+		<block wx:for="{{list}}" wx:for-index="i">
+      <view class='line'></view>
+			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' style='background-color:{{color}}'>    
+      <view class='firstPart'>
+            
+              <view class='flex-item' style='margin-top:20rpx'>{{item.recordTime}}{{record}}</view>
+            
+          </view>
+          <view class='secondPart' style='margin-top:20rpx'>
+            
+            
+            <view class='flex-item' >{{item.location}}
+            
+            </view>
+          </view>
+			
+			</view>
+      
+		</block>
+    <view class='line'></view>
+	</view>
+  <view class='liebiao'>{{   }}</view>
+
+
+</view>

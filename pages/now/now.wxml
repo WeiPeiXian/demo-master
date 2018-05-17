@@ -1,5 +1,5 @@
 <!--pages/history/history.wxml-->
-<view class="container flex-wrap flex-direction-row">
+<view class="mcontainer flex-wrap flex-direction-row">
   <view class="flex-row " style="top:0;position:fixed;width: 750rpx;display: flex;flex-direction: row;">
     <view class="section flex-view-item">
       <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
@@ -15,20 +15,31 @@
       <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
         <view class="picker">{{array3[index3]}}</view>
     </picker>
+
     </view>
   </view>
+  
   <view class='dingbu'>{{   }}</view>
+  
   <view class="content sam flex-item">
-		<block wx:for="{{array4}}">
-			<view class="lieBiao flex-wrap flex-direction-row" bindtap='message'>
-				<view class="flex-item">
-					<view class='firstPart'>zkc</view>
-          <view class='secondPart'>
-          <text style='color:grey'>学业困难 家庭困难 一般关注</text>
+  <view class='line'></view>  
+		<block wx:for="{{studentlist}}" wx:for-index="i">
+			<view class="lieBiao" data-studentid='{{item.studentId}}'  style="color:{{item.highlight?'#e98f36':'#black'}}"  bindtap='message'>
+					<view class='firstPart'>
+            <view class='flex-column'>
+              <view class='flex-item' >{{item.name}}</view>
+              <view class='flex-item' >{{item.studentId}}</view>
+            </view>
           </view>
-          <view class='thirdPart'>2018-03-28</view>
-				</view>
+          <view class='secondPart '>
+            <view class='flex-column' ><view class='flex-item' >{{item.helpType}}</view>
+            <view class='flex-item' >{{item.attentionType}}
+            </view>
+            </view>
+          </view>
+          <view class='thirdPart'>{{item.lastRecordTime}}</view>
 			</view>
+      <view class='line'></view>
 		</block>
 	</view>
   <view class='lieBiao'>{{   }}</view>

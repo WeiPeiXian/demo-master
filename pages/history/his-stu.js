@@ -1,3 +1,5 @@
+const app = getApp()
+var template = require('../../template/template.js');
 var api = 'http://180.76.249.233:8080/' ;
 var per = 'newhelp/api/baseStudent/personal/';
 var fam = 'newhelp/api/baseStudent/family/';
@@ -13,6 +15,12 @@ Page({
     currentTab: 0,
     tabCont: [{ "title": "个人信息", "index": "0" }, { "title": "家庭信息", "index": "1" }, { "title": "建档信息", "index": "2" }],
     personal:'',
+    height:1000,
+    h1:40,
+    h2: 40,
+    h3: 40,
+    h4: 40,
+    h5: 40,
     family:'',
     archive:''
   },
@@ -20,6 +28,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    template.tabbar("tabBar", 1, this)
     var that = this;
     wx.getStorage({
       key: 'token',
@@ -50,7 +59,7 @@ Page({
                   console.log(res.data)
                   wx.showToast({
                     title: "连接失败",
-                    icon: "fail"
+                    icon: "none"
                   })
                 }
               },
@@ -77,7 +86,7 @@ Page({
                   console.log(res.data)
                   wx.showToast({
                     title: "连接失败",
-                    icon: "fail"
+                    icon: "none"
                   })
                 }
               },
@@ -139,10 +148,6 @@ Page({
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   },
@@ -153,15 +158,13 @@ Page({
     this.setData({
       currentTab: e.detail.current
     });
-    // console.log("11111"+this.data.currentTab);
   },
   swithNav: function (e) {
     var that = this;
     that.setData({
       currentTab: e.target.dataset.current
     });
-
   }
-
+  
 
 })
