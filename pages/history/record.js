@@ -200,5 +200,10 @@ Page({
         })
       },
     })
-  }
+  },
+  two: function () {
+    wx.navigateTo({
+      url: '../add'
+    })
+  },
 })

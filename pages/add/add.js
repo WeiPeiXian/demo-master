@@ -82,13 +82,25 @@ Page({
   add:function(){
     var that=this;
     wx.getStorage({
-      key: 'teacherId',
+      key: 'duty',
       success: function (res) {
-        console.log(res.data)
         that.setData({
-          teacherid: res.data
+          duty: res.data
+          })
+          wx.getStorage({
+          key: 'name',
+          success: function (res) {
+        that.setData({
+          teachername: res.data
         })
         wx.getStorage({
+          key: 'teacherId',
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+          teacherid: res.data
+            })
+            wx.getStorage({
           key: 'token',
           success: function (res) {
             that.setData({
@@ -109,40 +121,45 @@ Page({
                 bulidingBasis: that.data.base,
                 otherCondition: that.data.other,
                 healthCondition: that.data.healthy,
-                familyCondition: that.data.family,
-                name: that.data.name,
-                attentionType: that.data.attention
+                              familyCondition: that.data.family,
+                              name: that.data.name,
+                              bulidingPerson: that.data.teachername,
+                              bulidingPersonDuty: that.data.duty,
+                              attentionType: that.data.attention
+                            },
+                            method: "post",
+                            success: function (res) {
+                            if (res.data.success == true) {
+                              var that2 = res.data
+                              console.log(that2.message)
+                              wx.showToast({
+                              title: res.data.message,
+                              icon: "success"
+                            })
+                            wx.redirectTo({
+                              url: '/pages/now/now',
+                            })
+                          }
+                          else {
+                            console.log(res.data)
+                            wx.showToast({
+                              title: "添加失败",
+                              icon: "none"
+                            })
+                          }
+                        },
+                        fail: function (res) {
+                        console.log(res);
+                        console.log(1)
+                      }
+                    })
+                  },
+                })
               },
-              method: "post",
-              success: function (res) {
-                if (res.data.success == true) {
-                  var that2 = res.data
-                  console.log(that2.message)
-                  wx.showToast({
-                    title: res.data.message,
-                    icon: "success"
-                  })
-                  wx.redirectTo({
-                    url: '/pages/now/now',
-                  })
-                }
-                else {
-                  console.log(res.data)
-                  wx.showToast({
-                    title: "添加失败",
-                    icon: "none"
-                  })
-                }
-              },
-              fail: function (res) {
-                console.log(res);
-                console.log(1)
-              }
             })
-          },
-
+          }
         })
-      },
+      }
     })
   },
   sIDinput: function (e) {

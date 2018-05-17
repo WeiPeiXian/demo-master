@@ -2,33 +2,19 @@
 //初始化数据
 function tabbarinit() {
  return [
-      { "current":0,
-        "pagePath": "/pages/index/index",
+    {
+        "current": 0,
+        "pagePath": "/pages/record/record",
         "iconPath": "/imgs/home.png",
         "selectedIconPath": "/imgs/home_on.png",
-        "text": "主页"
+        "text": "记录"
       },
       {
         "current": 0,
-        "pagePath": "/pages/news/news",
+        "pagePath": "/pages/stu/stu",
         "iconPath": "/imgs/message.png",
         "selectedIconPath": "/imgs/message_on.png",
-        "text": "资讯"
-
-      },
-      {
-        "current": 0,
-        "pagePath": "/pages/category/category",
-        "iconPath": "/imgs/category.png",
-        "selectedIconPath": "/imgs/category_on.png",
-        "text": "分类"
-      },
-      {
-        "current": 0,
-        "pagePath": "/pages/buy/buy",
-        "iconPath": "/imgs/buy.png",
-        "selectedIconPath": "/imgs/buy_on.png",
-        "text": "购物"
+        "text": "个人信息"
       }
     ]
 

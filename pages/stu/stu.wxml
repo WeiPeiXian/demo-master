@@ -1,4 +1,5 @@
-<!--index.wxml-->  
+<import src="../../template2/template2.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="swiper-tab" >  
     <view bindtap="swithNav" wx:for="{{tabCont}}" wx:key="item.index" class="swiper-tab-list {{currentTab==item.index?'active':''}}" data-current='{{item.index}}' >{{item.title}}</view>  
 </view>  

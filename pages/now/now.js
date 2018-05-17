@@ -199,7 +199,7 @@ Page({
   },
   message: function (e) {
     wx.navigateTo({
-      url: '../stu/stu'
+      url: '../record/record'
     })
     var stuid = e.currentTarget.dataset.studentid
     wx.setStorage({
