@@ -141,7 +141,7 @@ page{
 
 .dingbu{
   width: 100%;
-  height: 50rpx;
+  height: 100rpx;
   margin: 0rpx;
   margin-top:1rpx;
   background-color: #fff;
