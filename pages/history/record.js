@@ -39,14 +39,14 @@ Page({
     var that = this;
     var that = this;
     wx.getStorage({
-      key: 'studentid',
+      key: 'hArchiveId',
       success: function (res) {
         console.log(res.data)
         that.setData({
-          studentid: res.data
+          hArchiveId: res.data
         })
         var i =that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
+        var str = 'http://180.76.249.233:8080/newhelp/api/historyRecords/' + that.data.array[i] + '/' + res.data
         that.setData({
           url: str
         })
@@ -149,14 +149,14 @@ Page({
     var that = this;
     var that = this;
     wx.getStorage({
-      key: 'studentid',
+      key: 'hArchiveId',
       success: function (res) {
         console.log(res.data)
         that.setData({
-          studentid: res.data
+          hArchiveId: res.data
         })
         var i = that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
+        var str = 'http://180.76.249.233:8080/newhelp/api/historyRecords/' + that.data.array[i] + '/' + res.data
         that.setData({
           url: str
         })
@@ -201,9 +201,5 @@ Page({
       },
     })
   },
-  two: function () {
-    wx.navigateTo({
-      url: '../add'
-    })
-  },
+  
 })

@@ -1,6 +1,6 @@
 // pages/history/record.js
 const app = getApp()
-var template = require('../../template/template.js');
+var template = require('../../template2/template2.js');
 
 Page({
 
@@ -200,5 +200,10 @@ Page({
         })
       },
     })
-  }
+  },
+  two: function () {
+    wx.navigateTo({
+      url: './add'
+    })
+  },
 })

@@ -1,17 +1,18 @@
-<import src="../../template2/template2.wxml"/>
+x<import src="../../template2/template2.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+
 <view class="mcontainer">
-<view class='nav'>
+<view class='nav' style="top:0;position:fixed;width: 750rpx">
   <view class="section">
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
+    <view>
       {{array[index]}}
     </view>
   </picker>
   </view>
 </view>
-<view class='dingbu'>{{   }}</view>
-  	<view class="top flex-item ">
+    <view class='dingbu'>{{   }}</view>
+  	<view class="flex-item ">
 		<block wx:for="{{list}}" wx:for-index="i">
       <view class='line'></view>
 			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' style='background-color:{{color}}'>    
@@ -32,10 +33,12 @@
       
 		</block>
     <view class='line'></view>
+    <view class='lieBiao'>{{   }}</view>
+    <view class='lieBiao'>{{   }}</view>
 	</view>
-  <view class='liebiao'>{{   }}</view>
-  <view style='position:fixed; bottom:100rpx;width: 750rpx;'>
+  
+   <view style='position:fixed; bottom:100rpx;width: 750rpx;'>
     <button class='btn' bindtap='two'>增加</button>
-  </view>
-  <view class='liebiao'>{{   }}</view>
+  </view> 
+  
 </view>

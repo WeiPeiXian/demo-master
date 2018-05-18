@@ -2,7 +2,7 @@
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 
 <view class="mcontainer">
-<view class='nav'>
+<view class='nav' style="top:0;position:fixed;width: 750rpx">
   <view class="section">
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
     <view class="picker">
@@ -21,11 +21,8 @@
               <view class='flex-item' style='margin-top:20rpx'>{{item.recordTime}}{{record}}</view>
             
           </view>
-          <view class='secondPart' style='margin-top:20rpx'>
-            
-            
+          <view class='secondPart' style='margin-top:20rpx'>    
             <view class='flex-item' >{{item.location}}
-            
             </view>
           </view>
 			
