@@ -11,8 +11,6 @@ Page({
     name:"",
     array1: [
       { name: '一般关注', value: '一般关注', checked: 'true'},
-      { name: '非常关注', value:'非常关注'},
-      { name:'特殊关注', value:'特殊关注'},
       { name:'重点关注' , value:'重点关注'}
     ],
     array2:[
