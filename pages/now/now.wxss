@@ -1,5 +1,3 @@
-/* pages/history/history.wxss */
-
 .sam{
   top: 100rpx;
   bottom: 100rpx;
@@ -86,7 +84,7 @@ text{
   position: relative;
   float: left;
   height: 70rpx;
-  width: 50%;
+  width: 250rpx;
   background-color: #fff;
   justify-content:center;
   border-color: #f0f0f0
@@ -184,18 +182,6 @@ text{
 
 .picker{
   background-color: #fff;
-}
-.section{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  float: left;
-  height: 70rpx;
-  width: 248rpx;
-  margin: 1rpx;
-  background-color: #fff;
-  justify-content:center;
-  border-color: #f0f0f0
 }
 .dingbu{
   width: 100%;

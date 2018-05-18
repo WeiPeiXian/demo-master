@@ -37,7 +37,7 @@
  font-size: 14px
 } 
 .nameImage, .keyImage {  
-  margin-left: 22px;  
+  margin-left: 5px;  
   width: 14px;  
   height: 14px  
 }  

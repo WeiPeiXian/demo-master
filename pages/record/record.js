@@ -37,7 +37,6 @@ Page({
   onLoad: function (options) {
     template.tabbar("tabBar", 0, this)
     var that = this;
-    var that = this;
     wx.getStorage({
       key: 'studentid',
       success: function (res) {
@@ -57,6 +56,7 @@ Page({
             that.setData({
               token: res.data
             })
+            console.log("success get token")
             wx.request({
               url: that.data.url,
               header: {
@@ -70,10 +70,8 @@ Page({
                   that.setData({
                     list: that2.data
                   })
-
                 }
                 else {
-                  console.log(res.data)
                   wx.showToast({
                     title: "连接失败",
                     icon: "fail"
@@ -82,7 +80,7 @@ Page({
               },
               fail: function (res) {
                 console.log(res);
-                console.log(1)
+                console.log(3)
               }
             })
           },

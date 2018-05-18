@@ -37,7 +37,6 @@ Page({
   onLoad: function (options) {
     template.tabbar("tabBar", 0, this)
     var that = this;
-    var that = this;
     wx.getStorage({
       key: 'hArchiveId',
       success: function (res) {
@@ -70,9 +69,9 @@ Page({
                   that.setData({
                     list: that2.data
                   })
-
                 }
                 else {
+                  console.log(1)
                   console.log(res.data)
                   wx.showToast({
                     title: "连接失败",
@@ -82,11 +81,9 @@ Page({
               },
               fail: function (res) {
                 console.log(res);
-                console.log(1)
               }
             })
           },
-
         })
       },
     })
