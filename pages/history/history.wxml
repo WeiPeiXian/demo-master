@@ -1,11 +1,10 @@
-<!--pages/history/history.wxml-->
 <view class="mcontainer flex-wrap flex-direction-row">
-  <view class="flex-row" style=" top:0;position:fixed;width: 750rpx;">
-    <!-- <view class="section flex-view-item">
+  <view class="flex-row " style=" top:0;position:fixed;width: 750rpx;">
+     <view class="section flex-view-item">
       <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
         <view class="picker">{{array1[index1]}}</view>
-      </picker>
-    </view> -->
+      </picker> 
+    </view> 
     <view class="section flex-view-item">
       <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
         <view class="picker">{{array2[index2]}}</view>
@@ -17,11 +16,10 @@
     </picker>
     </view>
   </view>
-  	<view class="content sam flex-item ">
-      <view class='dingbu'>{{   }}</view>
-      <view class='line'></view>
-		<block wx:for="{{studentlist}}" wx:for-index="i">
-      <view class='line'></view>
+  	<view class='dingbu'>{{   }}</view>
+    <view class="content sam flex-item">  
+    <view class='line'></view>
+		 <block wx:for="{{studentlist}}" wx:for-index="i">
 			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' style='background-color:{{color}}'>
 					<view class='firstPart'>
             <view class='flex-column'>
@@ -37,6 +35,7 @@
           </view>
           <view class='thirdPart'>{{item.destoryingTime}}</view>
 			</view>
+      <view class='line'></view>
 		</block>
 	</view>
 </view>
