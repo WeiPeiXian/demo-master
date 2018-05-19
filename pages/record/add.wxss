@@ -1,1 +1,110 @@
-/* pages/record/add.wxss */
+.mcontainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  background-color: white
+}
+.view-hide{
+  flex:none;
+  height: 0rpx;
+}
+.picker{
+  background-color: #fff;
+}
+.picker2{
+   margin-top: 10px; 
+
+  background-color: #fff;
+  margin-right: 30rpx;
+}
+  
+
+.section{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  float: left;
+  height: 70rpx;
+  width: 750rpx;
+  background-color: #fff;
+  justify-content:center;
+  border-color: #f0f0f0
+}
+.section2{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  float: right;
+  height: 100rpx;
+  width: 750rpx;
+  background-color: #fff;
+  justify-content:space-between;
+  border-color: #f0f0f0
+}
+.login-from { 
+ flex: auto; 
+ height:100%; 
+}
+.inputView {
+ background-color: #fff;
+ margin-left: 2rpx; 
+ line-height: 50px;
+}
+.loginLab { 
+ margin: 15px 15px 15px 10px; 
+ color: #545454; 
+ font-size: 14px
+}
+.Lab { 
+ margin-left: 15px;
+ margin-top: 10px; 
+
+ color: #545454; 
+ font-size: 14px
+} 
+.inputText { 
+ flex: block;
+ float: right; 
+ text-align: right; 
+ margin-right: 22px; 
+ margin-top: 11px; 
+ color: #cccccc; 
+ font-size: 14px
+}
+.line {
+ width: 100%; 
+ height: 1px; 
+ background-color: #cccccc; 
+ margin-top: 1px; 
+} 
+ .radio-group {
+    border-bottom: 1px solid #ddd;
+    
+}
+.radio {
+    display: block;
+    border-top: 1px 
+    solid #ddd;
+    padding: 5px;
+} 
+.textArea{
+  width: 100%;
+  padding:20rpx;
+  min-height: 200rpx;
+  box-sizing: border-box;
+}
+.loginBtnView { 
+ width: 100%; 
+ height: auto; 
+ background-color: white; 
+ margin-top: 0px; 
+ margin-bottom: 0px; 
+ padding-bottom: 0px; 
+}
+.loginBtn { 
+ width: 80%; 
+ margin-top: 10px; 
+ margin-bottom: 20px; 
+}

@@ -10,33 +10,20 @@ Page({
   data: {
     array: ['周联系简易记录表', '面谈记录表', '家长联系记录表', '研讨及总结记录'],
     list: [],
-    objectArray: [
-      {
-        id: 0,
-        name: '周联系简易记录表'
-      },
-      {
-        id: 1,
-        name: '面谈记录表'
-      },
-      {
-        id: 2,
-        name: '家长联系记录表'
-      },
-      {
-        id: 3,
-        name: '研讨及总结记录'
-      }
-    ],
     index: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     template.tabbar("tabBar", 0, this)
     var that = this;
+    wx.getStorage({
+      key: 'Index',
+      success: function (res) {
+        that.setData({
+          index: res.data
+        })
+        console.log('index:', res.data)
+      },
+    })
     wx.getStorage({
       key: 'studentid',
       success: function (res) {
@@ -49,44 +36,44 @@ Page({
         that.setData({
           url: str
         })
-        console.log(that.data.url)
-        wx.getStorage({
-          key: 'token',
-          success: function (res) {
-            that.setData({
-              token: res.data
-            })
-            console.log("success get token")
-            wx.request({
-              url: that.data.url,
-              header: {
-                "Authorization": that.data.token
-              },
-              method: "GET",
-              success: function (res) {
-                if (res.data.success == true) {
-                  var that2 = res.data
-                  console.log(that2.data)
-                  that.setData({
-                    list: that2.data
-                  })
-                }
-                else {
-                  wx.showToast({
-                    title: "连接失败",
-                    icon: "fail"
-                  })
-                }
-              },
-              fail: function (res) {
-                console.log(res);
-                console.log(3)
-              }
-            })
+        
+      },
+    })
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        that.setData({
+          token: res.data
+        })
+        console.log("success get token")
+        wx.request({
+          url: that.data.url,
+          header: {
+            "Authorization": that.data.token
           },
-
+          method: "GET",
+          success: function (res) {
+           
+            if (res.data.success == true) {
+              var that2 = res.data
+              console.log(that2.data)
+              that.setData({
+                list: that2.data
+              })
+            }
+            else {
+              wx.showToast({
+                title: "连接失败",
+                icon: "fail"
+              })
+            }
+          },
+          fail: function (res) {
+            console.log(that.data.url)
+          }
         })
       },
+
     })
   },
 
@@ -94,7 +81,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that =this
+    
   },
 
   /**
@@ -144,7 +132,10 @@ Page({
     this.setData({
       index: i,
     })
-    var that = this;
+    wx.setStorage({
+      key: 'Index',
+      data: this.data.index,
+    })
     var that = this;
     wx.getStorage({
       key: 'studentid',

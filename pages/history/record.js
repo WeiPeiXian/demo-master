@@ -137,13 +137,7 @@ Page({
   onShareAppMessage: function () {
   
   },
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    var i = e.detail.value
-    this.setData({
-      index: i,
-    })
-    var that = this;
+  getlist:function(){
     var that = this;
     wx.getStorage({
       key: 'hArchiveId',
@@ -197,6 +191,19 @@ Page({
         })
       },
     })
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    var i = e.detail.value
+    this.setData({
+      index: i,
+    })
+    wx.setStorage({
+      key: 'hIndex',
+      data: this.data.index,
+    })
+    this.getlist()
+    
   },
   
 })

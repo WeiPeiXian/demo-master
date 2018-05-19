@@ -1,11 +1,10 @@
 <!--pages/add/add.wxml-->
-<view class="mcontainer">
-    
-        <view class="login-from">
-        <view class="line"></view>
-        <view class="inputView">
-       <label class="loginLab">学号*</label>
-       <input class="inputText" auto-focus='true' placeholder="请输入学号" bindinput="sIDinput" />
+<view class="mcontainer">  
+  <view class="login-from">
+    <view class="line"></view>
+    <view class="inputView">
+      <label class="loginLab">学号*</label>
+      <input class="inputText" auto-focus='true' placeholder="请输入学号" bindinput="sIDinput" />
     </view>
     <view class="line"></view>
     <view class="inputView">
@@ -13,7 +12,6 @@
        <input class="inputText" placeholder="请输入姓名" bindinput="nameInput" />
     </view>
     <view class="line"></view>
-
     <view class='inputView' >
       <label class="loginLab">建档类型</label>
       <checkbox-group bindchange="checkboxChange">
@@ -68,5 +66,4 @@
       <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="add">增加</button>
     </view> 
     </view>
-
 </view>

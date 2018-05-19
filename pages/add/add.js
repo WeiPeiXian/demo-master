@@ -88,9 +88,11 @@ Page({
         that.setData({
           duty: res.data
           })
-          wx.getStorage({
-          key: 'name',
-          success: function (res) {
+      }
+    })
+    wx.getStorage({
+      key: 'name',
+      success: function (res) {
         that.setData({
           teachername: res.data
         })
@@ -99,68 +101,73 @@ Page({
           success: function (res) {
             console.log(res.data)
             that.setData({
-          teacherid: res.data
+              teacherid: res.data
             })
-            wx.getStorage({
-          key: 'token',
-          success: function (res) {
-            that.setData({
-              token: res.data
-            })
-                          wx.request({
-                            url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent',
-                           header: {
-                            "Authorization": that.data.token,
-                          },
-                          data: {
-                            studentId: that.data.sID,
-                            teacherId: that.data.teacherid,
-                            studyCondition: that.data.study,
-                            studyCondition: that.data.study,
-                            lifeCondition: that.data.life,
-                            helpType: that.data.helpType,
-                            bulidingBasis: that.data.base,
-                            otherCondition: that.data.other,
-                            healthCondition: that.data.healthy,
-                            familyCondition: that.data.family,
-                            name: that.data.name,
-                            bulidingPerson: that.data.teachername,
-                            bulidingPersonDuty: that.data.duty,
-                            attentionType: that.data.attention
-                          },
-                          method: "post",
-                          success: function (res) {
-                          if (res.data.success == true) {
-                            var that2 = res.data
-                            console.log(that2.message)
-                            wx.showToast({
-                              title: res.data.message,
-                              icon: "success"
-                            })
-                            wx.redirectTo({
-                              url: '/pages/now/now',
-                            })
-                          }
-                          else {
-                            console.log(res.data)
-                            wx.showToast({
-                              title: "添加失败",
-                              icon: "none"
-                            })
-                          }
-                        },
-                        fail: function (res) {
-                        console.log(res);
-                        console.log(1)
-                      }
-                    })
-                  },
-                })
-              },
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        that.setData({
+          token: res.data
+        })
+        wx.request({
+        url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent',
+        header: {
+          "Authorization": that.data.token,
+        },
+        data: {
+          studentId: that.data.sID,
+          teacherId: that.data.teacherid,
+          studyCondition: that.data.study,
+          studyCondition: that.data.study,
+          lifeCondition: that.data.life,
+          helpType: that.data.helpType,
+          bulidingBasis: that.data.base,
+          otherCondition: that.data.other,
+          healthCondition: that.data.healthy,
+          familyCondition: that.data.family,
+          name: that.data.name,
+          bulidingPerson: that.data.teachername,
+          bulidingPersonDuty: that.data.duty,
+          attentionType: that.data.attention
+        },
+        method: "post",
+        success: function (res) {
+          if (res.data.success == true) {
+              var that2 = res.data
+              console.log(that2.message)
+              wx.showToast({
+                title: res.data.message,
+                icon: "success"
+              })
+              wx.switchTab({
+                url: '/pages/now/now',
+                success:function(e){
+                  var page = getCurrentPages().pop()
+                  if(page == undefined || page == null){  
+                    return
+                  }
+                  page.onLoad()
+                }
+              })
+            }
+          else {
+            console.log(res.data)
+            wx.showToast({
+              title: "添加失败",
+              icon: "none"
             })
           }
-        })
-      }
+        },
+        fail: function (res) {
+          console.log(res);
+          console.log(1)
+        }
+      })
+      },
+      })
+      },
     })
   },
   sIDinput: function (e) {
