@@ -1,54 +1,5 @@
 <import src="../../template/template.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
-<view class="swiper-tab">  
-    <view bindtap="swithNav" wx:for="{{tabCont}}" wx:key="item.index" class="swiper-tab-list {{currentTab==item.index?'active':''}}" data-current='{{item.index}}' >{{item.title}}</view>  
-</view>  
-<swiper class="swiper-box" current="{{currentTab}}" duration="300" style="height:{{height}}rpx" bindchange="GetCurrentTab" data-current='6' >
-    <swiper-item  wx:key="item.index">  
-      <view class='flex-column'>
-        <view class='item'>{{"学号 "+ all.studentId}}</view>
-        <view class='item'>{{"姓名 "+ all.name}}</view>
-        
-
-      </view>
-    </swiper-item>  
-    <swiper-item  wx:key="item.index" >
-      <view class='item'>{{"住址 "+ all.familyAddress}}</view>
-      <view class='item'>{{"电话号码 "+ all.familyTelNumber}}</view>
-      <view class='nul' >{{"   "}}</view>
-      <view class='item'>{{"父亲姓名 "+ all.fatherName}}</view>
-      <view class='item'>{{"工作单位 "+ all.fatherWorkUnit}}</view>
-      <view class='item'>{{"单位地址 "+ all.fatherWorkUnitAddress}}</view>
-      <view class='item'>{{"职务 "+ all.fatherDuty}}</view>
-      <view class='item'>{{"邮编 "+ all.fatherPostcode}}</view>
-      <view class='item'>{{"电话 "+ all.fatherTelNumber}}</view>
-      <view class='nul'>{{"   "}}</view>
-      <view class='item'>{{"母亲姓名 "+ all.motherName}}</view>
-      <view class='item'>{{"工作单位 "+ all.motherWorkUnit}}</view>
-      <view class='item'>{{"单位地址 "+ all.motherWorkUnitAddress}}</view>
-      <view class='item'>{{"职务 "+ all.motherDuty}}</view>
-      <view class='item'>{{"邮编 "+ all.motherPostcode}}</view>
-      <view class='item'>{{"电话 "+ all.motherTelNumber}}</view>
-    </swiper-item>  
-    <swiper-item  wx:key="item.index">  
-      <view class='flex-column'>
-        <view class='item'>{{"关注类型 "+ archive.attentionType}}</view>
-        <view class='item'>{{"建档类型 "+ archive.helpType}}</view>
-        <view class='item'>{{"建档人 "+ archive.bulidingPerson}}</view>
-        <view class='item'>{{"建档人职务 "+ archive.bulidingPersonDuty}}</view>
-        <view class='item'>家庭情况</view>
-        <view class='block'>{{archive.familyCondition}}</view>
-        <view class='item'>学习情况</view>
-        <view class='block'>{{archive.studyCondition}}</view>
-        <view class='item'>身心情况</view>
-        <view class='block'>{{archive.healthCondition}}</view>
-        <view class='item'>生活情况</view>
-        <view class='block'>{{archive.lifeCondition}}</view>
-        <view class='item'>其他情况</view>
-        <view class='block'>{{archive.otherCondition}}</view>
-        <view class='item'>建档依据</view>
-        <view class='block'>{{archive.bulidingBasis}}</view>
-        <view class='block'stytle="height:100rpx">{{    }}</view>
-      </view>
-    </swiper-item>
-</swiper>
+<view class="navbar"> 
+ <text wx:for="{{tabCont}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.title}}}</text> 
+</view> 

@@ -32,6 +32,4 @@
     <view class='line'></view>
 	</view>
   <view class='liebiao'>{{   }}</view>
-
-
 </view>

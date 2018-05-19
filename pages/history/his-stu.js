@@ -6,10 +6,6 @@ var studentid = '';
 var archiveid = '';
 var token = '';
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     currentTab: 0,
     tabCont: [{ "title": "个人信息", "index": "0" }, { "title": "家庭信息", "index": "1" }, { "title": "建档信息", "index": "2" }],

@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/login/login",
+    "pages/history/his-stu",
+        
+    "pages/login/login",    
+    "pages/week/week",
     "pages/record/record",
     "pages/record/add",
-    "pages/week/week",
     "pages/history/record",
     "pages/add/add",
-    "pages/history/his-stu",
     "pages/now/now",
     "pages/stu/stu",
     "pages/history/history",
