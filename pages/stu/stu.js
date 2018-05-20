@@ -1,5 +1,7 @@
 // pages/add/add.js
 const app = getApp()
+var util = require('../../utils/util.js')
+
 var template = require('../../template2/template2.js');
 var api = 'http://180.76.249.233:8080/newhelp/api/baseStudent/all/';
 var studentid = '';
@@ -26,7 +28,15 @@ Page({
   onLoad: function (options) {
     template.tabbar("tabBar", 1, this)
     this.getmessage()
-    
+    var that = this
+    wx.getStorage({
+      key: 'name',
+      success: function (res) {
+        that.setData({
+          teacher:res.data
+        })
+      },
+    })
   },
 
     /**
@@ -37,6 +47,7 @@ Page({
       key: 'all',
       data: this.data.all,
     })
+    
     
   },
 
@@ -165,9 +176,6 @@ Page({
     wx.navigateTo({
       url: '/pages/revise/revise',
     })
-  },
-  deletearchive:function(){
-
   },
 
   showModal: function () {
@@ -308,12 +316,56 @@ Page({
     this.hideModal();
   },
   click_ok: function () {
-    console.log("点击确定，输入的信息为为==", inputinfo);
+    console.log("点击确定，输入的信息为=", inputinfo);
     this.hideModal();
+    this.chudang()
   },
   input_content: function (e) {
-    console.log(e);
+    console.log(e.detail.value);
     inputinfo = e.detail.value;
   },
+  chudang:function(){
+    var that = this
+    console.log(that.data.token, studentid, inputinfo, that.data.teacher)
+    wx.request({
+      url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent',
+      header: {
+        'Authorization': that.data.token,
+        'Content-Type': 'application/json'
+      },
+      data: {
+        studentId: that.data.all.studentId,
+        destoryingBasis: inputinfo,
+        destoryingRecorder: that.data.teacher,
+        destoryingTime: util.formatTime(new Date())
+      },
+      method: "DELETE",
+      
+      success: function (res) {
+        if (res.data.success == true) {
+          var that2 = res.data
+          wx.showToast({
+            title: "除档成功",
+            icon: "success"
+          })
+          wx.setStorage({
+            key: 'deleteok',
+            data: true,
+          })
+          wx.switchTab({
+            url: '/pages/now/now',
+          })
 
+        }
+        else {
+          console.log(res.data)
+          wx.showToast({
+            title: "连接失败",
+            icon: "none"
+          })
+        }
+      },
+
+    })
+  }
 })

@@ -7,38 +7,21 @@ Page({
     date: util.formatTime(new Date()),
   },
   onLoad: function (options) {
-    var that = this
-    wx.getStorage({
-      key: 'Index',
-      success: function (res) {
-        that.setData({
-          index: res.data
-        })
-        that.showView()
-      },
-    })
-    wx.getStorage({
-      key: 'studentid',
-      success: function (res) {
-        that.setData({
-          studentid: res.data
-        })
-      },
-    })
-    wx.getStorage({
-      key: 'record',
-      success: function (res) {
-        that.setData({
-          record: res.data
-        })
-      },
-    })
+    this.getdata()
   },
   onReady: function () {
 
   },
   onShow: function () {
-
+    var that = this
+    wx.getStorage({
+      key: 'back',
+      success: function (res) {
+        if (res.data) {
+          that.getdata()
+        }
+      },
+    })
   },
   onHide: function () {
 
@@ -121,48 +104,75 @@ Page({
   bindText2: function (e) {
     this.data.record.comment = e.detail.value
   },
-  add: function (e) {
+  add: function () {
+    wx.navigateTo({
+      url: './revise',
+    })
+  },
+  getdata:function(){
     var that = this
+    wx.getStorage({
+      key: 'Index',
+      success: function (res) {
+        that.setData({
+          index: res.data
+        })
+        that.showView()
+      },
+    })
     wx.getStorage({
       key: 'token',
       success: function (res) {
+        that.setData({
+          token: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'recordid',
+      success: function (res) {
+        that.setData({
+          recordid: res.data
+        })
         wx.request({
-          url: 'http://180.76.249.233:8080/newhelp/api/record',
+          url: 'http://180.76.249.233:8080/newhelp/api/record/' + that.data.recordid,
           header: {
-            "Authorization": res.data,
+            "Authorization": that.data.token
           },
-          data: that.data.record,
-          method: "put",
+          method: "GET",
           success: function (res) {
+
             if (res.data.success == true) {
               var that2 = res.data
-              console.log(that2.message)
-              wx.showToast({
-                title: res.data.message,
-                icon: "success"
+              console.log(that2.data)
+              that.setData({
+                record: that2.data
               })
               wx.setStorage({
-                key: 'back',
-                data: true,
-              })
-              wx.navigateBack({
-                delta: 1
+                key: 'record',
+                data: that2.data,
               })
             }
             else {
-              console.log(res.data)
               wx.showToast({
-                title: "添加失败",
-                icon: "none"
+                title: "连接失败",
+                icon: "fail"
               })
             }
           },
           fail: function (res) {
-            console.log(res);
-            console.log(1)
+            console.log(that.data.url)
           }
         })
       },
     })
-  },
+    wx.getStorage({
+      key: 'record',
+      success: function (res) {
+        that.setData({
+          record: res.data
+        })
+      },
+    })
+  }
 })

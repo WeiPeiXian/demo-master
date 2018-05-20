@@ -32,34 +32,34 @@
     </view>
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">家庭情况</label>
-       <textarea class='textArea' bindblur="bindText1" auto-height maxlength='360'/>
+       <textarea style='color: #cccccc; font-size: 14px;' class='textArea' bindblur="bindText1" auto-height maxlength='360'/>
     </view>
     <view class="line"></view>
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">学习情况</label>
-       <textarea class='textArea' bindblur="bindText2" auto-height maxlength='360'/>
+       <textarea style='color: #cccccc; font-size: 14px;' class='textArea' bindblur="bindText2" auto-height maxlength='360'/>
     </view>
     
     <view class="line"></view>
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">身心情况</label>
-       <textarea class='textArea' auto-height bindblur="bindText3" maxlength='360'/>
+       <textarea style='color: #cccccc; font-size: 14px;' class='textArea' auto-height bindblur="bindText3" maxlength='360'/>
     </view>
     <view class="line"></view>
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">生活情况</label>
-       <textarea class='textArea' auto-height bindblur="bindText4" maxlength='360' />
+       <textarea style='color: #cccccc; font-size: 14px;' class='textArea' auto-height bindblur="bindText4" maxlength='360' />
     </view>
     <view class="line"></view>
     
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">其他情况</label>
-       <textarea class='textArea' auto-height bindblur="bindText5" maxlength='360' />
+       <textarea style='color: #cccccc; font-size: 14px;' class='textArea' auto-height bindblur="bindText5" maxlength='360' />
     </view>
     <view class="line"></view>
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">建档依据</label>
-       <textarea class='textArea' auto-height bindblur="bindText6" maxlength='360'/>
+       <textarea style='color: #cccccc; font-size: 14px;' class='textArea' auto-height bindblur="bindText6" maxlength='360'/>
     </view>
     <view class="line"></view>
     <view class="loginBtnView">

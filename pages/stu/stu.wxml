@@ -11,8 +11,8 @@
  <view class="line-top"></view>    
 <view class="input-view">   
 <view class="input01"></view>  
- <textarea class="input-style" type="text"   placeholder="输入档理由"  
-  bindblur="bind_textarea"  value="{{address}}" />  
+ <textarea class="input-style" type="text"   placeholder="输入除档理由"  
+  bindblur="input_content"  value="{{address}}" />  
 </view>    
 <!--对话框按钮-->    
 <view class="line-top">      

@@ -39,6 +39,7 @@ Page({
         
       },
     })
+    
     wx.getStorage({
       key: 'token',
       success: function (res) {
@@ -195,4 +196,15 @@ Page({
       url: './add'
     })
   },
+  message:function(e){
+    var that = this;
+    var recordid = e.currentTarget.dataset.recordid
+    wx.setStorage({
+      key: 'recordid',
+      data: recordid,
+    })
+    wx.navigateTo({
+      url: './message'
+    })
+  }
 })

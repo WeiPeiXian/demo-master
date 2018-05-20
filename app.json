@@ -1,7 +1,7 @@
 {
   "pages": [
-        "pages/login/login",
-
+    "pages/login/login",    
+    "pages/record/revise",
     "pages/revise/revise",
     "pages/history/his-stu",
     "pages/record/add",
@@ -11,8 +11,7 @@
     "pages/now/now",
     "pages/stu/stu",
     "pages/history/history",
-    "pages/record/revise"
-    
+    "pages/record/message"
   ],
   "window": {
     "backgroundTextStyle": "light",
