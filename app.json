@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/login/login",    
+    "pages/login/login",
+    "pages/revise/revise",    
     "pages/record/revise",
-    "pages/revise/revise",
     "pages/history/his-stu",
     "pages/record/add",
     "pages/record/record",

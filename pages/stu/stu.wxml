@@ -96,7 +96,7 @@
 </view>
 </view> 
   
-<view hidden="{{currentTab!==2}}" style='margin-bottom:110rpx '>
+<view hidden="{{currentTab!==2}}" style='margin-bottom:210rpx '>
     <view style='height:50rpx'>{{"   "}}</view> 
         <view class='line'></view>
         <view class='item'><text space='emsp'>{{"关注类型  "+ archive.attentionType}}</text></view>

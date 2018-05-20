@@ -1,5 +1,5 @@
 <view class="mcontainer">
-  <view class="login-from">
+  <view class="login-from" style='margin-bottom:200rpx'>
     <view class='line'></view>
     <view class='View'><text space='emsp'>{{"学号    "+all.studentId}}</text></view>
     <view class='line'></view>    
@@ -93,8 +93,8 @@
        <textarea value='{{archive.bulidingBasis}}'  class='textArea' auto-height bindblur="bindText6" style='color: #cccccc; font-size: 14px;' maxlength='360'/>
     </view>
     <view class="line"></view>
+    </view>
     <view class="loginBtnView">
       <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="revise">修改</button>
-    </view>
     </view>
 </view>

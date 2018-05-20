@@ -31,16 +31,14 @@
 .bott{
   bottom: 100rpx;
   position: fixed;
-  width: 710rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
+  width: 750rpx;
   display: flex;
   flex-direction: row;
 }
 .botton{
-  width: 350rpx;
-  border-radius: 3px;
-  background-color: ghostwhite;
+  width: 370rpx;
+  border-radius: 1px;
+  background-color: white ;
 }
 .botton::after{  
   border:1px solid ;  
