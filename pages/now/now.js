@@ -193,7 +193,7 @@ Page({
             helpType: that.data.value2[that.data.index2],
             attentionType: that.data.value3[that.data.index3],
           },
-          method: "post",
+          method: "POST",
           success: function (res) {
             
             if (res.data.success == true) {

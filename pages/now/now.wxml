@@ -19,7 +19,7 @@
   <view class='dingbu'>{{   }}</view>
   <view class="content sam flex-item">
   <view class='line'></view>  
-		<block wx:for="{{studentlist}}" wx:for-index="i">
+		<block wx:for="{{studentlist}}" wx:for-index="i" wx:key="studentId">
 			<view class="lieBiao" data-studentid='{{item.studentId}}'  style="color:{{item.highlight?'#e98f36':'#black'}}"  bindtap='message'>
 					<view class='firstPart'>
             <view class='flex-column'>

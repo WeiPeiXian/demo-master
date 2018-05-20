@@ -1,4 +1,4 @@
-// pages/week/revise.js
+// pages/record/revise.js
 Page({
 
   /**

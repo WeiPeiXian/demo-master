@@ -1,63 +1,109 @@
 <import src="../../template2/template2.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
-<view class="swiper-tab" >  
-    <view bindtap="swithNav" wx:for="{{tabCont}}" wx:key="item.index" class="swiper-tab-list {{currentTab==item.index?'active':''}}" data-current='{{item.index}}' >{{item.title}}</view>  
-</view>  
-<swiper class="swiper-box" current="{{currentTab}}" duration="300" style="height:400px" bindchange="GetCurrentTab" data-current='6' >  
-    <swiper-item wx:for="{{tabCont}}" wx:key="item.index">  
-      <view>{{item.title}}</view>
-    </swiper-item>  
-</swiper> 
 
 
+<view class="navbar" style="top:0;position:fixed;width: 750rpx;">
+ 
+ <text wx:for="{{tabCont}}" data-idx="{{index}}" class="item1 {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+</view>
 
+<view hidden="{{currentTab!==0}}" style='margin-bottom:210rpx ' > 
+  <view class='flex-column'>
+    <view style='height:50rpx'>{{"   "}}</view> 
+    <view class='line'></view>
 
-<view class='flex-column'>
-        <view class='item'>{{"学号 "+ all.studentId}}</view>
-        <view class='item'>{{"姓名 "+ all.name}}</view>
-        
+    <view class='item'><text space='emsp'>{{"学号    "+all.studentId}}</text></view>
+    <view class='line'></view>    
+    <view class='item'><text space='emsp'>{{"姓名    "+all.name}}</text></view>
+    <view class='line'></view>
+    <view class='item'><text space='emsp'>{{"性别    "+all.sex}}</text></view>
+    <view class='line'></view>
+    <view class='item'><text space='emsp'>{{"宿舍    "+all.dormitory}}</text></view>
+    <view class='line'></view>
+    <view class='item'><text space='emsp'>{{"专业    "+all.major}}</text></view>
+    <view class='line'></view>
+    <view class='item'><text space='emsp'>{{"联系方式  "+all.contactWay}}</text></view>
+    <view class='line'></view>
+    <view class='item'><text space='emsp'>{{"政治面貌  "+all.politicalStatus}}</text></view>
+    <view class='line'></view>
 
-      </view>
+    
+  </view>
+</view> 
 
+<view hidden="{{currentTab!==1}}" style='margin-bottom:210rpx '>
+  <view class='flex-column'>
+    <view style='height:50rpx'>{{"   "}}</view> 
 
-
-<view class='item'>{{"住址 "+ all.familyAddress}}</view>
-      <view class='item'>{{"电话号码 "+ all.familyTelNumber}}</view>
-      <view class='nul' >{{"   "}}</view>
-      <view class='item'>{{"父亲姓名 "+ all.fatherName}}</view>
-      <view class='item'>{{"工作单位 "+ all.fatherWorkUnit}}</view>
-      <view class='item'>{{"单位地址 "+ all.fatherWorkUnitAddress}}</view>
-      <view class='item'>{{"职务 "+ all.fatherDuty}}</view>
-      <view class='item'>{{"邮编 "+ all.fatherPostcode}}</view>
-      <view class='item'>{{"电话 "+ all.fatherTelNumber}}</view>
-      <view class='nul'>{{"   "}}</view>
-      <view class='item'>{{"母亲姓名 "+ all.motherName}}</view>
-      <view class='item'>{{"工作单位 "+ all.motherWorkUnit}}</view>
-      <view class='item'>{{"单位地址 "+ all.motherWorkUnitAddress}}</view>
-      <view class='item'>{{"职务 "+ all.motherDuty}}</view>
-      <view class='item'>{{"邮编 "+ all.motherPostcode}}</view>
-      <view class='item'>{{"电话 "+ all.motherTelNumber}}</view>
-
-
-
-
-
-      <view class='flex-column'>
-        <view class='item'>{{"关注类型 "+ archive.attentionType}}</view>
-        <view class='item'>{{"建档类型 "+ archive.helpType}}</view>
-        <view class='item'>{{"建档人 "+ archive.bulidingPerson}}</view>
-        <view class='item'>{{"建档人职务 "+ archive.bulidingPersonDuty}}</view>
+<view class='line'></view>
+  
+      <view class='item'><text space='emsp'>{{"住址    "+ all.familyAddress}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text  space='emsp'>{{"电话号码  "+all.familyTelNumber}}</text></view>
+      <view class='line'></view>
+      <view style='height:30rpx'><text>{{"   "}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"父亲姓名  "+ all.fatherName}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"工作单位  "+ all.fatherWorkUnit}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text>{{"单位地址 "}}</text> <text style='margin-left:80rpx;margin-top:20rpx'>{{ all.fatherWorkUnitAddress}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"职务    "+ all.fatherDuty}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"邮编    "+all.fatherPostcode}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"电话    "+all.fatherTelNumber}}</text></view>
+      <view class='line'></view>
+      <view style='height:30rpx'>{{"   "}}</view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"母亲姓名  "+all.motherName}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"工作单位  "+ all.motherWorkUnit}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text>{{"单位地址 "}}</text> <text style='margin-left:80rpx;margin-top:20rpx'>{{ all.motherWorkUnitAddress}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"职务    "+all.motherDuty}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"邮编    "+all.motherPostcode}}</text></view>
+      <view class='line'></view>
+      <view class='item'><text space='emsp'>{{"电话    "+ all.motherTelNumber}}</text></view>
+      <view class='line'></view>
+</view>
+</view> 
+  
+<view hidden="{{currentTab!==2}}" style='margin-bottom:110rpx '>
+    <view style='height:50rpx'>{{"   "}}</view> 
+        <view class='line'></view>
+        <view class='item'><text space='emsp'>{{"关注类型  "+ archive.attentionType}}</text></view>
+        <view class='line'></view>
+        <view class='item'><text space='emsp'>{{"建档类型  "+archive.helpType}}</text></view>
+        <view class='line'></view>
+        <view class='item'><text space='emsp'>{{"建档人   "+archive.bulidingPerson}}</text></view>
+        <view class='line'></view>
+        <view class='item'><text space='emsp'>{{"建档人职务 "+ archive.bulidingPersonDuty}}</text></view>
+        <view class='line'></view>
         <view class='item'>家庭情况</view>
-        <view class='block'>{{archive.familyCondition}}</view>
+        <view class='item inaline'style='height:{{height1}}rpx'><text>{{archive.familyCondition}}</text></view>
+        <view class='line'></view>
         <view class='item'>学习情况</view>
-        <view class='block'>{{archive.studyCondition}}</view>
+        <view class='item inaline'style='height:{{height2}}rpx'><text>{{archive.studyCondition}}</text></view>
+        <view class='line'></view>
         <view class='item'>身心情况</view>
-        <view class='block'>{{archive.healthCondition}}</view>
+        <view class='item inaline'style='height:{{height3}}rpx'><text>{{archive.healthCondition}}</text></view>
+        <view class='line'></view>
         <view class='item'>生活情况</view>
-        <view class='block'>{{archive.lifeCondition}}</view>
+        <view class='item inaline'style='height:{{height4}}rpx'><text>{{archive.lifeCondition}}</text></view>
+        <view class='line'></view>
         <view class='item'>其他情况</view>
-        <view class='block'>{{archive.otherCondition}}</view>
+        <view class='item inaline'style='height:{{height5}}rpx'><text>{{archive.otherCondition}}</text></view>
+        <view class='line'></view>
         <view class='item'>建档依据</view>
-        <view class='block'>{{archive.bulidingBasis}}</view>
-        <view class='block'stytle="height:100rpx">{{    }}</view>
-      </view>
+        <view class='item inaline'style='height:{{height6}}rpx'><text>{{archive.bulidingBasis}}</text></view>
+        <view class='line'></view>
+
+</view>
+<view class='bott'>
+  <button bindtap='revise' class='botton flex-item'>修改</button>
+  <button bindtap='delete' class='botton flex-item'>除档</button>
+</view>

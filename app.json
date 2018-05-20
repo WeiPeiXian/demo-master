@@ -1,17 +1,15 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/history/his-stu",
-        
-    "pages/login/login",    
-    "pages/week/week",
-    "pages/record/record",
     "pages/record/add",
+    "pages/record/record",
     "pages/history/record",
     "pages/add/add",
     "pages/now/now",
     "pages/stu/stu",
     "pages/history/history",
-    "pages/week/revise"
+    "pages/record/revise"
   ],
   "window": {
     "backgroundTextStyle": "light",

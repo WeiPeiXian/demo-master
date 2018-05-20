@@ -42,12 +42,12 @@
     
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">主要内容</label>
-       <textarea class='textArea' bindblur="bindText1" auto-height/>
+       <textarea class='textArea' bindblur="bindText1"maxlength='360' auto-height="true"/>
     </view>
     <view class="line"></view>  
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">备注</label>
-       <textarea class='textArea' style='min-height:100rpx' auto-height bindblur="bindText2" maxlength='36' />
+       <textarea class='textArea' style='min-height:100rpx' auto-height="true" bindblur="bindText2" maxlength='36' />
     </view>
     
     <view class="line"></view>

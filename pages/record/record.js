@@ -45,7 +45,7 @@ Page({
         that.setData({
           token: res.data
         })
-        console.log("success get token")
+        console.log("success get token", that.data.url)
         wx.request({
           url: that.data.url,
           header: {
@@ -163,13 +163,13 @@ Page({
               },
               method: "GET",
               success: function (res) {
+                console.log(res.data)
                 if (res.data.success == true) {
                   var that2 = res.data
                   console.log(that2.data)
                   that.setData({
                     list: that2.data
                   })
-
                 }
                 else {
                   console.log(res.data)

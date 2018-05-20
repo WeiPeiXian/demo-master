@@ -1,69 +1,69 @@
-.title{
-  margin-top: 30rpx;
-  font-size: 35rpx;
-}
-.swiper-tab {
-  line-height: 80rpx;
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: space-around;
-  background-color: #fff;
-  align-items: center;
-}
-
-.swiper-tab-list {
-  font-size: 30rpx;
-  color: #777;
-  
-  background-color: #fff;
-  text-align: center;
-}
-
-.active {
-  color: #da7c0c;
-  border-bottom: 5rpx solid #da7c0c;
-}
-
-.swiper-box {
-  display: block;
-  height: 100%;
-  background-color: #fff;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 100rpxt
+page{ 
+ display: flex; 
+ flex-direction: column; 
+ height: 100%; 
+} 
+.navbar{ 
+ flex: none; 
+ display: flex;
+ background: #fff;
+ color: black;
+} 
+.navbar .item1{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center; 
+ line-height: 80rpx; 
+} 
+.navbar .item1.active{ 
+ color: #FFCC00; 
+} 
+.navbar .item1.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 0; 
+ right: 0; 
+ height: 4rpx; 
+ background: #FFCC00; 
 }
 
-.swiper-box view {
-  text-align: left;
-  display: flex;
-  position: relative;
-  margin-left:10rpx;
-  margin-bottom: 10rpx;
-  font-size: 30rpx;
-  color: #ccc;  
-  flex-direction: column;
-  
-}
-
-image {
-  width: 100%;
-}
-
-.nav{
-  height: 100rpx;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
 .item{
-  height: 60rpx;
-  width: 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: 710rpx;
+  color: grey;
   font-size: 40rpx;
   margin-bottom: 1rpx;
 }
-.nul{
-  height:20rpx;
-  width: 100%;
-  font-size: 10rpx;
-  margin-bottom: 1rpx;
+.Lab { 
+ margin-left: 15px;
+ margin-top: 10px; 
+
+ color: #545454; 
+ font-size: 14px
+} 
+.picker2{
+   margin-top: 10px; 
+
+  background-color: #fff;
+  margin-right: 30rpx;
 }
+  
+text{
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    font-size: 40rpx;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:10;
+}
+.line {
+ width: 100%; 
+ height: 1px; 
+ background-color: #cccccc; 
+ margin-top: 1px; 
+} 

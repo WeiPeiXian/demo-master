@@ -8,22 +8,21 @@ var token = '';
 Page({
   data: {
     currentTab: 0,
-    tabCont: [{ "title": "个人信息", "index": "0" }, { "title": "家庭信息", "index": "1" }, { "title": "建档信息", "index": "2" }],
+    tabCont: [
+      "个人信息",
+      "家庭信息",
+      "建档信息"
+      ],
+    show:[false,true,true],
     all:'',
-    height:1000,
-    h1:40,
-    h2: 40,
-    h3: 40,
-    h4: 40,
-    h5: 40,
     archive:''
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     template.tabbar("tabBar", 1, this)
     var that = this;
+    // that.setData({
+    //   currentTab: 1,
+    // })
     wx.getStorage({
       key: 'token',
       success: function(res) {
@@ -105,7 +104,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      archive: this.data.archive,
+    })
+    // this.setData({
+    //   currentTab: 2,
+    // })
+    
   },
 
   /**
@@ -154,25 +159,74 @@ Page({
     });
   },
   setHeight:function(){
-    var height = 600 + this.data.archive.familyCondition.length * 1.5+
-      this.data.archive.studyCondition.length * 1.5+
-      this.data.archive.healthCondition.length * 1.5+
-      this.data.archive.lifeCondition.length * 1.5+         
-      this.data.archive.otherCondition.length * 1.5+ 
-      this.data.archive.bulidingBasis.length*1.5
-    console.log(this.data.archive.studyCondition.length)
-    if(height>1000){
-    this.setData({
-      height:height
-    })
+    var height1 = 300;
+    var height2 = 300;
+    var height3 = 300;
+    var height4 = 300;
+    var height5 = 300;
+    var height6 = 300;
+    if (this.data.archive.familyCondition!=null)
+      height1 = this.data.archive.familyCondition.length * 2.5
+    if (height1 < 300) {
+      height1 = 300
+    } 
+    if (this.data.archive.studyCondition != null)
+      height2 = this.data.archive.studyCondition.length * 2.5
+
+    if (height2 < 300) {
+      height2 = 300
     }
+    if (this.data.archive.healthCondition != null)
+    height3 = this.data.archive.healthCondition.length * 2.5
+    if (height3 < 300) {
+      height3 = 300
+    }
+    if (this.data.archive.lifeCondition != null)
+    height4 = this.data.archive.lifeCondition.length * 2.5
+    if (height4 < 300) {
+      height4 = 300
+    }
+    if (this.data.archive.otherCondition != null)
+    height5 = this.data.archive.otherCondition.length * 2.5
+    if (height5 < 300) {
+      height5 = 300
+    }
+    if (this.data.archive.bulidingBasis != null)
+
+    height6 = this.data.archive.bulidingBasis.length * 2.5
+    if (height6 < 300) {
+      height6 = 300
+    }
+    this.setData({
+      height1: height1,
+      height2: height2,
+      height3: height3,
+      height4: height4,
+      height5: height5,
+      height6: height6,
+    })
   },
-  swithNav: function (e) {
-    var that = this;
-    that.setData({
-      currentTab: e.target.dataset.current
-    });
-  }
+  navbarTap: function (e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+    if(this.data.currentTab==0){
+      this.setData({
+        show:[false,true,true]
+      })
+    }
+    if (this.data.currentTab == 1) {
+      this.setData({
+        show: [true, false, true]
+      })
+    }
+    if (this.data.currentTab == 2) {
+      this.setData({
+        show: [true, true, false]
+      })
+    }
+    
+  },
   
 
 })
