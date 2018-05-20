@@ -1,0 +1,100 @@
+<view class="mcontainer">
+  <view class="login-from">
+    <view class='line'></view>
+    <view class='View'><text space='emsp'>{{"学号    "+all.studentId}}</text></view>
+    <view class='line'></view>    
+    <view class='View'><text space='emsp'>{{"姓名    "+all.name}}</text></view>
+    <view class="line"></view>
+    <view class="inputView">
+      <label class="loginLab" >年级</label>
+      <input value="{{all.grade}}" class="inputText" bindinput="gradeInput" />
+    </view>
+    <view class="line"></view>
+    <view class="inputView">
+      <label class="loginLab" >专业</label>
+      <input value="{{all.major}}" class="inputText" bindinput="majorInput" />
+    </view>
+    
+    <view class="line"></view>
+    <view class="inputView">
+       <label class="loginLab" >职务</label>
+       <input  value='{{all.duty}}' class="inputText" bindinput="dutyInput" />
+    </view>
+    <view class="line"></view>
+    <view class="inputView">
+      <label class="loginLab" >宿舍</label>
+       <input value='{{all.dormitory}}' class="inputText" bindinput="susheInput" />
+    </view>
+    <view class="line"></view>
+    
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">家庭住址</label>
+       <textarea value='{{all.familyAddress}}' class='textArea' bindblur="bindText0" auto-height style='min-height:100rpx;color: #cccccc; font-size: 14px;' maxlength='36'/>
+    </view>
+    <view class="line"></view>
+
+    <view class="inputView">
+      <label class="loginLab" >政治面貌</label>
+       <input value='{{all.politicalStatus}}' class="inputText" bindinput="politicalInput" />
+    </view>
+    <view class="line"></view>
+    <view class="inputView">
+      <label class="loginLab" >联系方式</label>
+       <input value='{{all.contactWay}}'  class="inputText" bindinput="contactInput" />
+    </view>
+    <view class="line"></view>
+    <view class='inputView' >
+      <label class="loginLab">建档类型</label>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{array2}}" wx:key="name">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="line"></view>
+    <view class="inputView">
+       <label class="loginLab">关注状态</label>
+       <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{array1}}"wx:key="name">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>
+          <text>{{item.value}}</text>
+        </label>
+      </radio-group>
+    </view>
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">家庭情况</label>
+       <textarea value='{{archive.familyCondition}}' class='textArea' bindblur="bindText1" auto-height style='color: #cccccc; font-size: 14px;' maxlength='360'/>
+    </view>
+    <view class="line"></view>
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">学习情况</label>
+       <textarea value='{{archive.studyCondition}}' class='textArea' bindblur="bindText2" auto-height  style='color: #cccccc; font-size: 14px;' maxlength='360'/>
+    </view>
+    
+    <view class="line"></view>
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">身心情况</label>
+       <textarea value='{{archive.healthCondition}}' class='textArea' auto-height bindblur="bindText3"  style='color: #cccccc; font-size: 14px;' maxlength='360'/>
+    </view>
+    <view class="line"></view>
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">生活情况</label>
+       <textarea value='{{archive.lifeCondition}}' class='textArea' auto-height bindblur="bindText4" style='color: #cccccc; font-size: 14px;' maxlength='360' />
+    </view>
+    <view class="line"></view>
+    
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">其他情况</label>
+       <textarea value='{{archive.otherCondition}}' class='textArea' auto-height bindblur="bindText5" style='color: #cccccc; font-size: 14px;' maxlength='360' />
+    </view>
+    <view class="line"></view>
+    <view class="inputView" style='line-height: 20px;'>
+       <label class="loginLab">建档依据</label>
+       <textarea value='{{archive.bulidingBasis}}'  class='textArea' auto-height bindblur="bindText6" style='color: #cccccc; font-size: 14px;' maxlength='360'/>
+    </view>
+    <view class="line"></view>
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="revise">修改</button>
+    </view>
+    </view>
+</view>

@@ -3,7 +3,8 @@ const app = getApp()
 var template = require('../../template2/template2.js');
 var api = 'http://180.76.249.233:8080/newhelp/api/baseStudent/all/';
 var studentid = '';
-var token = '';
+var inputinfo = "";  
+
 Page({
   data: {
     currentTab: 0,
@@ -14,110 +15,44 @@ Page({
     ],
     show: [false, true, true],
     all: '',
-    archive: ''
+    archive: '',
+    animationData: "",
+    showModalStatus: false,
+    address: ""  
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     template.tabbar("tabBar", 1, this)
-    var that = this;
-    // that.setData({
-    //   currentTab: 1,
-    // })
+    this.getmessage()
     
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        token = res.data;
-        that.setData({
-          token: res.data
-        })
-        wx.getStorage({
-          key: 'studentid',
-          success: function (res) {
-            studentid = res.data
-            var url = api + studentid
-            wx.request({
-              url: url,
-              header: {
-                "Authorization": token
-              },
-              method: "GET",
-              success: function (res) {
-                if (res.data.success == true) {
-                  var that2 = res.data
-                  console.log(that2.data)
-                  that.setData({
-                    all: that2.data
-                  })
-
-                }
-                else {
-                  console.log(res.data)
-                  wx.showToast({
-                    title: "连接失败",
-                    icon: "none"
-                  })
-                }
-              },
-              fail: function (res) {
-                console.log(res);
-              }
-            })
-          },
-        })
-        wx.getStorage({
-          key: 'studentid',
-          success: function (res) {
-            studentid = res.data
-            wx.request({
-              url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent/' + studentid,
-              header: {
-                "Authorization": that.data.token
-              },
-              method: "GET",
-              success: function (res) {
-                if (res.data.success == true) {
-                  var that2 = res.data
-                  console.log(that2.data)
-                  that.setData({
-                    archive: that2.data
-                  })
-                  that.setHeight()
-                }
-                else {
-                  console.log(res.data)
-                  wx.showToast({
-                    title: "连接失败",
-                    icon: "none"
-                  })
-                }
-              },
-
-            })
-          },
-        })
-      },
-    })
-
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
   onReady: function () {
-
-    this.setData({
-      archive: this.data.archive,
+    wx.setStorage({
+      key: 'all',
+      data: this.data.all,
     })
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that =this
+    wx.getStorage({
+      key: 'back',
+      success: function(res) {
+        if(res.data){
+          that.getmessage()
+        }
+      },
+    })
   },
 
   /**
@@ -225,6 +160,160 @@ Page({
         show: [true, true, false]
       })
     }
+  },
+  revise:function(){
+    wx.navigateTo({
+      url: '/pages/revise/revise',
+    })
+  },
+  deletearchive:function(){
 
   },
+
+  showModal: function () {
+    // 显示遮罩层    
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+      showModalStatus: true
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 20)
+  },//myview 为点击控件的bindtap 应用时写在对应控件中就好  
+  myview: function () {
+    if (this.data.showModalStatus) {
+      this.hideModal();
+    } else {
+      this.showModal();
+    }
+  },
+  getmessage:function(){
+    var that = this;
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        var token = res.data;
+        that.setData({
+          token: res.data
+        })
+        wx.getStorage({
+          key: 'studentid',
+          success: function (res) {
+            studentid = res.data
+            var url = api + studentid
+            wx.request({
+              url: url,
+              header: {
+                "Authorization": token
+              },
+              method: "GET",
+              success: function (res) {
+                if (res.data.success == true) {
+                  var that2 = res.data
+                  console.log(that2.data)
+                  that.setData({
+                    all: that2.data
+                  })
+                  wx.setStorage({
+                    key: 'all',
+                    data: that2.data,
+                  })
+
+                }
+                else {
+                  console.log(res.data)
+                  wx.showToast({
+                    title: "连接失败",
+                    icon: "none"
+                  })
+                }
+              },
+              fail: function (res) {
+                console.log(res);
+              }
+            })
+          },
+        })
+        wx.getStorage({
+          key: 'studentid',
+          success: function (res) {
+            studentid = res.data
+            wx.request({
+              url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent/' + studentid,
+              header: {
+                "Authorization": that.data.token
+              },
+              method: "GET",
+              success: function (res) {
+                if (res.data.success == true) {
+                  var that2 = res.data
+                  console.log(that2.data)
+                  that.setData({
+                    archive: that2.data
+                  })
+                  wx.setStorage({
+                    key: 'archive',
+                    data: that.data.archive,
+                  })
+                  that.setHeight()
+
+                }
+                else {
+                  console.log(res.data)
+                  wx.showToast({
+                    title: "连接失败",
+                    icon: "none"
+                  })
+                }
+              },
+
+            })
+          },
+        })
+      },
+    })
+  },
+  hideModal: function () {
+    // 隐藏遮罩层    
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showModalStatus: false
+      })
+    }.bind(this), 20)
+  },
+  click_cancel: function () {
+    console.log("点击取消");
+    this.hideModal();
+  },
+  click_ok: function () {
+    console.log("点击确定，输入的信息为为==", inputinfo);
+    this.hideModal();
+  },
+  input_content: function (e) {
+    console.log(e);
+    inputinfo = e.detail.value;
+  },
+
 })

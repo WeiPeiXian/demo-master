@@ -3,7 +3,31 @@
 
 
 <view class="navbar" style="top:0;position:fixed;width: 750rpx;">
- 
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>    
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">    
+<view class="dialog-title">    
+  输入档理由    
+</view>    
+ <view class="line-top"></view>    
+<view class="input-view">   
+<view class="input01"></view>  
+ <textarea class="input-style" type="text"   placeholder="输入档理由"  
+  bindblur="bind_textarea"  value="{{address}}" />  
+</view>    
+<!--对话框按钮-->    
+<view class="line-top">      
+</view>    
+<view class="btn-view">    
+  <view class="btn-cancel" bindtap="click_cancel">      
+          取 消    
+  </view>    
+  <view class="btn-line">    
+  </view>    
+  <view class="btn-cancel" bindtap="click_ok">      
+          确 定    
+  </view>    
+</view>    
+</view>    
  <text wx:for="{{tabCont}}" data-idx="{{index}}" class="item1 {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
 </view>
 
@@ -11,7 +35,7 @@
   <view class='flex-column'>
     <view style='height:50rpx'>{{"   "}}</view> 
     <view class='line'></view>
-
+    
     <view class='item'><text space='emsp'>{{"学号    "+all.studentId}}</text></view>
     <view class='line'></view>    
     <view class='item'><text space='emsp'>{{"姓名    "+all.name}}</text></view>
@@ -37,7 +61,7 @@
 
 <view class='line'></view>
   
-      <view class='item'><text space='emsp'>{{"住址    "+ all.familyAddress}}</text></view>
+      <view class='item'><text space='emsp'>{{"住址    "}}</text> <text style='margin-left:80rpx;margin-top:20rpx'>{{all.familyAddress}}</text></view>
       <view class='line'></view>
       <view class='item'><text  space='emsp'>{{"电话号码  "+all.familyTelNumber}}</text></view>
       <view class='line'></view>
@@ -105,5 +129,5 @@
 </view>
 <view class='bott'>
   <button bindtap='revise' class='botton flex-item'>修改</button>
-  <button bindtap='delete' class='botton flex-item'>除档</button>
+  <button bindtap='showModal' class='botton flex-item'>除档</button>
 </view>

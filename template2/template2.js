@@ -34,6 +34,10 @@ function tabbarmain(bindName = "tabdata", id, target) {
   otabbar[id]['current'] = 1;
   bindData[bindName] = otabbar
   that.setData({ bindData });
+  wx.setStorage({
+    key: 'back',
+    data: false,
+  })
 }
 
 
