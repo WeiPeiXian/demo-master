@@ -1,4 +1,4 @@
 
 <template name="back">
-  <button bindtap='backok' type="primary" style='background:grey;' class="circle"><text space='emsp' style='font-size: 30rpx;'>{{" "+"退出"}}</text></button>
+  <button bindtap='backok' type="primary" style='background:grey;line-height: 25rpx;' class="circle"><text space='emsp' style='font-size: 28rpx;'>{{" "+"退出"}}</text></button>
 </template>

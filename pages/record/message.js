@@ -17,6 +17,7 @@ Page({
     wx.getStorage({
       key: 'back',
       success: function (res) {
+        console.log(res.data)
         if (res.data) {
           that.getdata()
         }

@@ -83,22 +83,22 @@
         <view class='item'><text space='emsp'>{{"建档人职务 "+ archive.bulidingPersonDuty}}</text></view>
         <view class='line'></view>
         <view class='item'>家庭情况</view>
-        <view class='item inaline'style='height:{{height1}}rpx'><text>{{archive.familyCondition}}</text></view>
+        <view class='item inaline'style='height:{{height1}}rpx'><text style='color: #cccccc; font-size: 14px;'>{{archive.familyCondition}}</text></view>
         <view class='line'></view>
         <view class='item'>学习情况</view>
-        <view class='item inaline'style='height:{{height2}}rpx'><text>{{archive.studyCondition}}</text></view>
+        <view class='item inaline'style='height:{{height2}}rpx'><text style='color: #cccccc; font-size: 14px;'>{{archive.studyCondition}}</text></view>
         <view class='line'></view>
         <view class='item'>身心情况</view>
-        <view class='item inaline'style='height:{{height3}}rpx'><text>{{archive.healthCondition}}</text></view>
+        <view class='item inaline'style='height:{{height3}}rpx'><text style='color: #cccccc; font-size: 14px;'>{{archive.healthCondition}}</text></view>
         <view class='line'></view>
         <view class='item'>生活情况</view>
-        <view class='item inaline'style='height:{{height4}}rpx'><text>{{archive.lifeCondition}}</text></view>
+        <view class='item inaline'style='height:{{height4}}rpx'><text style='color: #cccccc; font-size: 14px;'>{{archive.lifeCondition}}</text></view>
         <view class='line'></view>
         <view class='item'>其他情况</view>
-        <view class='item inaline'style='height:{{height5}}rpx'><text>{{archive.otherCondition}}</text></view>
+        <view class='item inaline'style='height:{{height5}}rpx'><text style='color: #cccccc; font-size: 14px;'>{{archive.otherCondition}}</text></view>
         <view class='line'></view>
         <view class='item'>建档依据</view>
-        <view class='item inaline'style='height:{{height6}}rpx'><text>{{archive.bulidingBasis}}</text></view>
+        <view class='item inaline'style='height:{{height6}}rpx'><text style='color: #cccccc; font-size: 14px;'>{{archive.bulidingBasis}}</text></view>
         <view class='line'></view>
 
 </view>

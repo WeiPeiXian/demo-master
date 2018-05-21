@@ -6,9 +6,8 @@
     border-radius: 500px;
     box-shadow: 4px 1px 1px #cccccc;
     position: fixed;
-    bottom: 300rpx;
+    bottom: 500rpx;
     right: 30rpx;
-    line-height: 25rpx;
     font-size: 30rpx;
     color: #EB602E;
     align-items: center;

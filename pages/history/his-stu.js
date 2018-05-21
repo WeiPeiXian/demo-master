@@ -172,34 +172,34 @@ Page({
     var height5 = 300;
     var height6 = 300;
     if (this.data.archive.familyCondition!=null)
-      height1 = this.data.archive.familyCondition.length * 2.5
+      height1 = this.data.archive.familyCondition.length * 2
     if (height1 < 300) {
       height1 = 300
     } 
     if (this.data.archive.studyCondition != null)
-      height2 = this.data.archive.studyCondition.length * 2.5
+      height2 = this.data.archive.studyCondition.length * 2
 
     if (height2 < 300) {
       height2 = 300
     }
     if (this.data.archive.healthCondition != null)
-    height3 = this.data.archive.healthCondition.length * 2.5
+    height3 = this.data.archive.healthCondition.length * 2
     if (height3 < 300) {
       height3 = 300
     }
     if (this.data.archive.lifeCondition != null)
-    height4 = this.data.archive.lifeCondition.length * 2.5
+    height4 = this.data.archive.lifeCondition.length * 2
     if (height4 < 300) {
       height4 = 300
     }
     if (this.data.archive.otherCondition != null)
-    height5 = this.data.archive.otherCondition.length * 2.5
+    height5 = this.data.archive.otherCondition.length * 2
     if (height5 < 300) {
       height5 = 300
     }
     if (this.data.archive.bulidingBasis != null)
 
-    height6 = this.data.archive.bulidingBasis.length * 2.5
+    height6 = this.data.archive.bulidingBasis.length * 2
     if (height6 < 300) {
       height6 = 300
     }
