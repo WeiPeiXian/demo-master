@@ -59,6 +59,12 @@ Page({
 
   },
 
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
+
   /**
    * 用户点击右上角分享
    */
@@ -166,13 +172,14 @@ Page({
             if (res.data.success == true) {
               var that2 = res.data
               console.log(that2.message)
-              wx.showToast({
-                title: res.data.message,
-                icon: "success"
-              })
               wx.setStorage({
                 key: 'back2',
                 data: true,
+              })
+              wx.showToast({
+                title: res.data.message,
+                icon: "success",
+                duration: 2000
               })
               wx.navigateBack({
                 delta:1

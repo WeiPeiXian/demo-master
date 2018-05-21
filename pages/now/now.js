@@ -228,5 +228,10 @@ Page({
       }
     }
   })
+  },
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
   }
 })

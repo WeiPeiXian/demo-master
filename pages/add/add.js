@@ -77,6 +77,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
+
   onShareAppMessage: function () {
   
   },

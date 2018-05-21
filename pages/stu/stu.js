@@ -50,7 +50,11 @@ Page({
     
     
   },
-
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

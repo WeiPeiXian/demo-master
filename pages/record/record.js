@@ -61,6 +61,12 @@ Page({
 
   },
 
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
+
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -93,7 +99,8 @@ Page({
           studentid: res.data
         })
         var i = that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
+        var recordname = encodeURIComponent(that.data.array[i])
+        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + recordname + '/' + res.data
         that.setData({
           url: str
         })

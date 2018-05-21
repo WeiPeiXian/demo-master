@@ -135,13 +135,13 @@ Page({
       }
     })
     wx.getStorage({
-      key: 'recordid',
+      key: 'historyRecordIdt',
       success: function (res) {
         that.setData({
           recordid: res.data
         })
         wx.request({
-          url: 'http://180.76.249.233:8080/newhelp/api/record/' + that.data.recordid,
+          url: 'http://180.76.249.233:8080/newhelp/api/historyRecord/' + that.data.recordid,
           header: {
             "Authorization": that.data.token
           },

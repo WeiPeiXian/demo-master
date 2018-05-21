@@ -1,3 +1,4 @@
+<import src="../../back/back.wxml"/>
 <view class="mcontainer">
   <view class="login-from" style='margin-bottom:200rpx'>
     <view class='line'></view>

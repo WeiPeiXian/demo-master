@@ -60,6 +60,11 @@ Page({
   },
   onShow: function () {
   },
+   backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
   onHide: function () {
 
   },

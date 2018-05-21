@@ -73,11 +73,17 @@ Page({
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.data.record.date = e.detail.value
+    this.data.record.recordTime = e.detail.value
     this.setData({
-      date: e.detail.value
+      record:this.data.record
     })
   },
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
+
   showView: function () {
     if (this.data.index == 0) {
       this.setData({

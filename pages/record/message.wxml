@@ -1,10 +1,12 @@
-<!--pages/add/add.wxml-->
+<import src="../../back/back.wxml"/>
+<!--pages/add/add.wxml--><template is="back"/>
+
 <view class="mcontainer">
     <view class='line'></view>
     <view class="section2">
       <view class="Lab">时间</view>
       
-        <view class="picker2">{{date}}</view>
+        <view class="picker2">{{record.recordTime}}</view>
       
     </view> 
   <view class="login-from">

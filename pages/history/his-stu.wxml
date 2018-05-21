@@ -1,4 +1,6 @@
 <import src="../../template/template.wxml"/>
+<import src="../../back/back.wxml"/>
+<template is="back"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="navbar" style="top:0;position:fixed;width: 750rpx;">
  <text wx:for="{{tabCont}}" data-idx="{{index}}" class="item1 {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 

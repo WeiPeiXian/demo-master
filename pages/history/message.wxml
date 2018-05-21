@@ -1,54 +1,53 @@
-<import src="../../back/back.wxml"/><template is="back"/>
+<import src="../../back/back.wxml"/>
+<template is="back"/>
 
 <view class="mcontainer">
     <view class='line'></view>
     <view class="section2">
       <view class="Lab">时间</view>
-      <picker mode="date" bindchange="bindDateChange"start="2018-5-01" end="2050-09-01" value="{{record.recordTime}}" >
+      
         <view class="picker2">{{record.recordTime}}</view>
-      </picker>
+      
     </view> 
   <view class="login-from">
     <view class=" {{showView[0]?'line':'view-hide'}}"></view>
     <view class="{{showView[0]?'inputView':'view-hide'}}">
        <label class="{{showView[0]?'loginLab':'view-hide'}}" >{{showView[0]?'记录人':''}}</label>
-       <input value="{{showView[0]?record.recorder:''}}" disabled="{{!showView[0]}}"  class="{{showView[0]?'inputText':'view-hide'}}" bindinput="recorderInput" />
+       <input value="{{showView[0]?record.recorder:''}}" disabled='true' class="{{showView[0]?'inputText':'view-hide'}}" bindinput="recorderInput" />
     </view>
     <view class=" {{showView[1]?'line':'view-hide'}}"></view>
     <view class="{{showView[1]?'inputView':'view-hide'}}">
        <label class="{{showView[1]?'loginLab':'view-hide'}}" >{{showView[1]?'见证人':''}}</label>
-       <input value="{{showView[1]?record.witness:''}}" disabled="{{!showView[1]}}"class="{{showView[1]?'inputText':'view-hide'}}" bindinput="witnessInput" />
+       <input value="{{showView[1]?record.witness:''}}" disabled='true'class="{{showView[1]?'inputText':'view-hide'}}" bindinput="witnessInput" />
     </view>
     <view class=" {{showView[2]?'line':'view-hide'}}"></view>
     <view class="{{showView[2]?'inputView':'view-hide'}}">
        <label class="{{showView[2]?'loginLab':'view-hide'}}" >{{showView[2]?'方式':''}}</label>
-       <input value="{{showView[2]?record.way:''}}" disabled="{{!showView[2]}}"  class="{{showView[2]?'inputText':'view-hide'}}" bindinput="typeInput" />
+       <input value="{{showView[2]?record.way:''}}" disabled='true'  class="{{showView[2]?'inputText':'view-hide'}}" bindinput="typeInput" />
     </view>
     <view class=" {{showView[3]?'line':'view-hide'}}"></view>
     <view class="{{showView[3]?'inputView':'view-hide'}}">
        <label class="{{showView[3]?'loginLab':'view-hide'}}" >{{showView[3]?'参与人':''}}</label>
-       <input value="{{showView[3]?record.participant:''}}" disabled="{{!showView[3]}}"  class="{{showView[3]?'inputText':'view-hide'}}" bindinput="participantInput" />
+       <input value="{{showView[3]?record.participant:''}}"disabled='true' class="{{showView[3]?'inputText':'view-hide'}}" bindinput="participantInput" />
     </view>
     <view class=" {{showView[4]?'line':'view-hide'}}"></view>
     <view class="{{showView[4]?'inputView':'view-hide'}}">
        <label class="{{showView[4]?'loginLab':'view-hide'}}" >{{showView[4]?'地点':''}}</label>
-       <input  value="{{showView[4]?record.location:''}}" disabled="{{!showView[4]}}"  class="{{showView[4]?'inputText':'view-hide'}}" bindinput="locationInput" />
+       <input  value="{{showView[4]?record.location:''}}" disabled='true' class="{{showView[4]?'inputText':'view-hide'}}" bindinput="locationInput" />
     </view>
     <view class="line"></view>
     
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">主要内容</label>
-       <textarea style='color: #cccccc; font-size: 14px;' value='{{record.content}}' class='textArea' bindblur="bindText1"maxlength='360' auto-height="true"/>
+       <textarea style='color: #cccccc; font-size: 14px;' disabled='true' value='{{record.content}}' class='textArea' bindblur="bindText1"maxlength='360' auto-height="true"/>
     </view>
     <view class="line"></view>  
     <view class="inputView" style='line-height: 20px;'>
        <label class="loginLab">备注</label>
-       <textarea value='{{record.comment}}' class='textArea' style='min-height:200rpx;color: #cccccc; font-size: 14px;'auto-height="true" bindblur="bindText2" maxlength='36' />
+       <textarea disabled='true' value='{{record.comment}}' class='textArea' style='min-height:200rpx;color: #cccccc; font-size: 14px;'auto-height="true" bindblur="bindText2" maxlength='36' />
     </view>
     
     <view class="line"></view>
-    <view class="loginBtnView">
-      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="add">确认修改</button>
-    </view> 
+    
     </view>
 </view>

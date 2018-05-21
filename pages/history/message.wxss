@@ -4,7 +4,44 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0;
-  background-color: #f2f2f2
+  background-color: white
+}
+.view-hide{
+  flex:none;
+  height: 0rpx;
+}
+.picker{
+  background-color: #fff;
+}
+.picker2{
+   margin-top: 10px; 
+
+  background-color: #fff;
+  margin-right: 30rpx;
+}
+  
+
+.section{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  float: left;
+  height: 70rpx;
+  width: 750rpx;
+  background-color: #fff;
+  justify-content:center;
+  border-color: #f0f0f0
+}
+.section2{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  float: right;
+  height: 100rpx;
+  width: 750rpx;
+  background-color: #fff;
+  justify-content:space-between;
+  border-color: #f0f0f0
 }
 .login-from { 
  flex: auto; 
@@ -15,18 +52,25 @@
  margin-left: 2rpx; 
  line-height: 50px;
 }
+.Lab { 
+ margin-left: 30rpx;
+ margin-top: 20rpx; 
+ color: #545454; 
+ font-size: 28rpx;
+ width:100rpx;
+} 
 .loginLab { 
  margin: 30rpx 30rpx 30rpx 20rpx; 
  color: #545454; 
  font-size: 28rpx;
- width:120rpx;
+ width:100rpx;
 }
 .inputText { 
  flex: block;
  float: right; 
  text-align: right; 
  margin-right: 44rpx;
- width: 530rpx;
+ width: 550rpx;
  margin-top: 22rpx; 
  color: #cccccc; 
  font-size: 28rpx
@@ -56,7 +100,7 @@
 .loginBtnView { 
  width: 100%; 
  height: auto; 
- background-color: #f2f2f2; 
+ background-color: white; 
  margin-top: 0px; 
  margin-bottom: 0px; 
  padding-bottom: 0px; 

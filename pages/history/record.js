@@ -1,15 +1,13 @@
 // pages/history/record.js
 const app = getApp()
 var template = require('../../template/template.js');
+var array=['周联系简易记录表', '面谈记录表', '家长联系记录表', '研讨及总结记录']
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     array: ['周联系简易记录表', '面谈记录表', '家长联系记录表', '研讨及总结记录'],
     list:[],
+    recordname:'周联系简易记录表',
     objectArray: [
       {
         id: 0,
@@ -37,56 +35,7 @@ Page({
   onLoad: function (options) {
     template.tabbar("tabBar", 0, this)
     var that = this;
-    wx.getStorage({
-      key: 'hArchiveId',
-      success: function (res) {
-        console.log(res.data)
-        that.setData({
-          hArchiveId: res.data
-        })
-        var i =that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/historyRecords/' + that.data.array[i] + '/' + res.data
-        that.setData({
-          url: str
-        })
-        console.log(that.data.url)
-        wx.getStorage({
-          key: 'token',
-          success: function (res) {
-            that.setData({
-              token: res.data
-            })
-            wx.request({
-              url: that.data.url,
-              header: {
-                "Authorization": that.data.token
-              },
-              method: "GET",
-              success: function (res) {
-                if (res.data.success == true) {
-                  var that2 = res.data
-                  console.log(that2.data)
-                  that.setData({
-                    list: that2.data
-                  })
-                }
-                else {
-                  console.log(1)
-                  console.log(res.data)
-                  wx.showToast({
-                    title: "连接失败",
-                    icon: "fail"
-                  })
-                }
-              },
-              fail: function (res) {
-                console.log(res);
-              }
-            })
-          },
-        })
-      },
-    })
+    that.getlist()
   },
 
   /**
@@ -94,6 +43,12 @@ Page({
    */
   onReady: function () {
 
+  },
+
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
   },
 
   /**
@@ -147,7 +102,8 @@ Page({
           hArchiveId: res.data
         })
         var i = that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/historyRecords/' + that.data.array[i] + '/' + res.data
+        var recordname = encodeURIComponent(that.data.array[i])
+        var str = 'http://180.76.249.233:8080/newhelp/api/historyRecords/' + recordname + '/' + that.data.hArchiveId
         that.setData({
           url: str
         })
@@ -198,12 +154,25 @@ Page({
     this.setData({
       index: i,
     })
+    this.setData({
+      recordname:this.data.array[i]
+    })
     wx.setStorage({
-      key: 'hIndex',
+      key: 'Index',
       data: this.data.index,
     })
     this.getlist()
     
   },
-  
+  message: function (e) {
+    var that = this;
+    var historyRecordId = e.currentTarget.dataset.recordid
+    wx.setStorage({
+      key: 'historyRecordId',
+      data: historyRecordId,
+    })
+    wx.navigateTo({
+      url: './message'
+    })
+  }
 })

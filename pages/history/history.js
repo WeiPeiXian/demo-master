@@ -42,6 +42,12 @@ Page({
 
   },
 
+  backok: function () {
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -164,6 +170,10 @@ Page({
     wx.setStorage({
       key: 'hArchiveId',
       data: hArchiveId
+    })
+    wx.setStorage({
+      key: 'Index',
+      data: 0,
     })
     wx.setStorage({
       key: 'studentid',

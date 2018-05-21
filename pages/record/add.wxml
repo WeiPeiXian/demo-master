@@ -1,4 +1,6 @@
-<!--pages/add/add.wxml-->
+<import src="../../back/back.wxml"/>
+<!--pages/add/add.wxml--><template is="back"/>
+
 <view class="mcontainer">
     <view class="section flex-view-item">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">

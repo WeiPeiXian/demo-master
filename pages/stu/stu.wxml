@@ -1,6 +1,7 @@
+<import src="../../back/back.wxml"/>
 <import src="../../template2/template2.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
-
+<template is="back"/>
 
 <view class="navbar" style="top:0;position:fixed;width: 750rpx;">
     <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>    

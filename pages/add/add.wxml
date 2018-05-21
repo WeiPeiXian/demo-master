@@ -1,4 +1,7 @@
 <!--pages/add/add.wxml-->
+<import src="../../back/back.wxml"/>
+<template is="back"/>
+
 <view class="mcontainer">  
   <view class="login-from">
     <view class="line"></view>

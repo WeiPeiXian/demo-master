@@ -1,5 +1,7 @@
+<import src="../../back/back.wxml"/>
 <import src="../../template/template.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<template is="back"/>
 
 <view class="mcontainer">
 <view class='nav' style="top:0;position:fixed;width: 750rpx">
@@ -15,7 +17,7 @@
   	<view class="top flex-item ">
 		<block wx:for="{{list}}" wx:for-index="i" wx:key="recordId">
       <view class='line'></view>
-			<view class="lieBiao" data-historyArchiveid='{{item.historyArchiveId}}' data-studentid='{{item.studentId}}'   bindtap='message' style='background-color:{{color}}'>    
+			<view class="lieBiao" data-recordid='{{item.historyRecordId}}' bindtap='message' style='background-color:{{color}}'>    
       <view class='firstPart'>
             
               <view class='flex-item' style='margin-top:20rpx'>{{item.recordTime}}{{record}}</view>

@@ -1,4 +1,6 @@
-<import src="../../template2/template2.wxml"/>
+<import src="../../back/back.wxml"/>
+<import src="../../template2/template2.wxml"/><template is="back"/>
+
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 
 <view class="mcontainer">
