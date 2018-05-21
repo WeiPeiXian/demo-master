@@ -2,9 +2,7 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
-    array: ['周联系简易记录表', '面谈记录表', '家长联系记录表', '研讨及总结记录'],
     tab: 0,
-    showView: [true, true, true],
     date: util.formatTime(new Date()),
     array2: [
       { name: '学业困难', value: '学业困难' },

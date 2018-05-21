@@ -69,26 +69,28 @@
  color: #545454; 
  font-size: 14px
 }
-.loginLab { 
- margin: 15px 15px 15px 10px; 
- color: #545454; 
- font-size: 14px
-}
 .Lab { 
- margin-left: 15px;
- margin-top: 10px; 
-
+ margin-left: 30rpx;
+ margin-top: 20rpx; 
  color: #545454; 
- font-size: 14px
+ font-size: 28rpx;
+ width:100rpx;
 } 
+.loginLab { 
+ margin: 30rpx 30rpx 30rpx 20rpx; 
+ color: #545454; 
+ font-size: 28rpx;
+ width:120rpx;
+}
 .inputText { 
  flex: block;
  float: right; 
  text-align: right; 
- margin-right: 22px; 
- margin-top: 11px; 
+ margin-right: 44rpx;
+ width: 530rpx;
+ margin-top: 22rpx; 
  color: #cccccc; 
- font-size: 14px
+ font-size: 28rpx
 }
 .line {
  width: 100%; 

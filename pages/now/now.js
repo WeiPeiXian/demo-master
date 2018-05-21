@@ -155,6 +155,10 @@ Page({
       data: stuid,
     })
     wx.setStorage({
+      key: 'back2',
+      data: false,
+    })
+    wx.setStorage({
       key: 'Index',
       data: "0",
     })

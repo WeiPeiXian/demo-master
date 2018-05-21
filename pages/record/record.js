@@ -14,68 +14,7 @@ Page({
   },
   onLoad: function (options) {
     template.tabbar("tabBar", 0, this)
-    var that = this;
-    wx.getStorage({
-      key: 'Index',
-      success: function (res) {
-        that.setData({
-          index: res.data
-        })
-        console.log('index:', res.data)
-      },
-    })
-    wx.getStorage({
-      key: 'studentid',
-      success: function (res) {
-        console.log(res.data)
-        that.setData({
-          studentid: res.data
-        })
-        var i = that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
-        that.setData({
-          url: str
-        })
-        
-      },
-    })
-    
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        that.setData({
-          token: res.data
-        })
-        console.log("success get token", that.data.url)
-        wx.request({
-          url: that.data.url,
-          header: {
-            "Authorization": that.data.token
-          },
-          method: "GET",
-          success: function (res) {
-           
-            if (res.data.success == true) {
-              var that2 = res.data
-              console.log(that2.data)
-              that.setData({
-                list: that2.data
-              })
-            }
-            else {
-              wx.showToast({
-                title: "连接失败",
-                icon: "fail"
-              })
-            }
-          },
-          fail: function (res) {
-            console.log(that.data.url)
-          }
-        })
-      },
-
-    })
+    this.getlist()
   },
 
   /**
@@ -90,7 +29,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    wx.getStorage({
+      key: 'back2',
+      success: function(res) {
+        if(res.data){
+          that.getlist()
+        }
+      },
+    })
   },
 
   /**
@@ -126,6 +73,69 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getlist:function(){
+    var that = this;
+    wx.getStorage({
+      key: 'Index',
+      success: function (res) {
+        that.setData({
+          index: res.data
+        })
+        console.log('index:', res.data)
+      },
+    })
+    wx.getStorage({
+      key: 'studentid',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          studentid: res.data
+        })
+        var i = that.data.index
+        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
+        that.setData({
+          url: str
+        })
+
+      },
+    })
+
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        that.setData({
+          token: res.data
+        })
+        console.log("success get token", that.data.url)
+        wx.request({
+          url: that.data.url,
+          header: {
+            "Authorization": that.data.token
+          },
+          method: "GET",
+          success: function (res) {
+            if (res.data.success == true) {
+              var that2 = res.data
+              console.log(that2.data)
+              that.setData({
+                list: that2.data
+              })
+            }
+            else {
+              wx.showToast({
+                title: "连接失败",
+                icon: "fail"
+              })
+            }
+          },
+          fail: function (res) {
+            console.log(that.data.url)
+          }
+        })
+      },
+
+    })
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

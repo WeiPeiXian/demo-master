@@ -138,7 +138,7 @@ Page({
               var that2 = res.data
               console.log(that2.message)
               wx.showToast({
-                title: res.data.message,
+                title: "更新成功",
                 icon: "success"
               })
               wx.setStorage({

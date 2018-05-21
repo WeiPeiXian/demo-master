@@ -170,8 +170,12 @@ Page({
                 title: res.data.message,
                 icon: "success"
               })
-              wx.redirectTo({
-                url: '/pages/record/record',
+              wx.setStorage({
+                key: 'back2',
+                data: true,
+              })
+              wx.navigateBack({
+                delta:1
               })
             }
             else {

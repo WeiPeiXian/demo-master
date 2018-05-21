@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/login/login",
+    "pages/login/login",    
+    "pages/record/add",
     "pages/revise/revise",    
     "pages/record/revise",
     "pages/history/his-stu",
-    "pages/record/add",
     "pages/record/record",
     "pages/history/record",
     "pages/add/add",
