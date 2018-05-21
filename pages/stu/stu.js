@@ -3,7 +3,7 @@ const app = getApp()
 var util = require('../../utils/util.js')
 
 var template = require('../../template2/template2.js');
-var api = 'http://180.76.249.233:8080/newhelp/api/baseStudent/all/';
+var api = 'http://api.changename.xin:8080/newhelp/api/baseStudent/all/';
 var studentid = '';
 var inputinfo = "";  
 
@@ -261,7 +261,7 @@ Page({
           success: function (res) {
             studentid = res.data
             wx.request({
-              url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent/' + studentid,
+              url: 'http://api.changename.xin:8080/newhelp/api/archiveStudent/' + studentid,
               header: {
                 "Authorization": that.data.token
               },
@@ -332,7 +332,7 @@ Page({
     var that = this
     console.log(that.data.token, studentid, inputinfo, that.data.teacher)
     wx.request({
-      url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent',
+      url: 'http://api.changename.xin:8080/newhelp/api/archiveStudent',
       header: {
         'Authorization': that.data.token,
         'Content-Type': 'application/json'

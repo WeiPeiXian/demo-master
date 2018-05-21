@@ -154,7 +154,7 @@ Page({
       key: 'token',
       success: function (res) {
         wx.request({
-          url: 'http://180.76.249.233:8080/newhelp/api/archiveStudent',
+          url: 'http://api.changename.xin:8080/newhelp/api/archiveStudent',
           header: {
             "Authorization": res.data,
           },

@@ -1,7 +1,7 @@
 const app = getApp()
 var template = require('../../template/template.js');
 
-var api = 'http://180.76.249.233:8080/newhelp/api/baseStudent/all/' ;
+var api = 'http://api.changename.xin:8080/newhelp/api/baseStudent/all/' ;
 var studentid = '';
 var archiveid = '';
 var token = '';
@@ -69,7 +69,7 @@ Page({
           success: function (res) {
             archiveid = res.data
             wx.request({
-              url: 'http://180.76.249.233:8080/newhelp/api/historyArchive/'+archiveid,
+              url: 'http://api.changename.xin:8080/newhelp/api/historyArchive/'+archiveid,
               header: {
                 "Authorization": that.data.token
               },

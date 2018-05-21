@@ -100,7 +100,7 @@ Page({
         })
         var i = that.data.index
         var recordname = encodeURIComponent(that.data.array[i])
-        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + recordname + '/' + res.data
+        var str = 'http://api.changename.xin:8080/newhelp/api/records/' + recordname + '/' + res.data
         that.setData({
           url: str
         })
@@ -163,7 +163,7 @@ Page({
           studentid: res.data
         })
         var i = that.data.index
-        var str = 'http://180.76.249.233:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
+        var str = 'http://api.changename.xin:8080/newhelp/api/records/' + that.data.array[i] + '/' + res.data
         that.setData({
           url: str
         })

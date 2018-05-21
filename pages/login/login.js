@@ -29,7 +29,7 @@ Page({
     }else{
       wx.request({
         
-        url: 'http://180.76.249.233:8080/newhelp/api/login',
+        url: 'http://api.changename.xin:8080/newhelp/api/login',
         header: {
           "Content-Type": "application/json"
         },

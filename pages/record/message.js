@@ -142,7 +142,7 @@ Page({
           recordid: res.data
         })
         wx.request({
-          url: 'http://180.76.249.233:8080/newhelp/api/record/' + that.data.recordid,
+          url: 'http://api.changename.xin:8080/newhelp/api/record/' + that.data.recordid,
           header: {
             "Authorization": that.data.token
           },
