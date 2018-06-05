@@ -133,7 +133,7 @@ Page({
       key: 'token',
       success: function (res) {
         wx.request({
-          url: 'http://api.changename.xin:8080/newhelp/api/record',
+          url: 'https://api.uestcsise.cn/newhelp/api/record',
           header: {
             "Authorization": res.data,
           },

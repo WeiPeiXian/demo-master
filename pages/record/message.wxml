@@ -1,5 +1,3 @@
-<import src="../../back/back.wxml"/>
-<!--pages/add/add.wxml--><template is="back"/>
 
 <view class="mcontainer">
     <view class='line'></view>

@@ -1,5 +1,5 @@
-// pages/now/now.js
 var app = getApp();
+var util = require('../../utils/util.js')
 Page({
   data: {
     token:"",
@@ -98,7 +98,7 @@ Page({
           teacherid: res.data
         })
         var arr = [
-          'http://api.changename.xin:8080/newhelp/api/archiveStudents/',
+          'https://api.uestcsise.cn/newhelp/api/archiveStudents/',
           that.data.teacherid
         ]
         var str = arr.join('')
@@ -127,15 +127,16 @@ Page({
 
                 }
                 else {
-                  console.log(res.data)
-                  wx.showToast({
-                    title: "连接失败",
-                    icon: "fail"
-                  })
+                  console.log(res)
+                  if (res.statusCode === 401)
+                  
+                  util.reload()
+                  that.getlist()
                 }
               },
               fail: function (res) {
-                console.log(res);
+                
+
                 console.log(1)
               }
             })
@@ -186,6 +187,7 @@ Page({
   },
   search:function(){
     var that =this
+    
     wx.getStorage({
       key: 'teacherId',
       success: function(res) {
@@ -195,7 +197,7 @@ Page({
         console.log(res.data)
         if ((that.data.index1 != 0) || (that.data.index2 != 0) || (that.data.index3!=0)){
         wx.request({
-          url: 'http://api.changename.xin:8080/newhelp/api/archiveStudents',
+          url: 'https://api.uestcsise.cn/newhelp/api/archiveStudents',
           header: {
             "Authorization": that.data.token,
           },
@@ -215,7 +217,17 @@ Page({
               console.log(res.data.data)
             }
             else {
-              console.log(res.data)
+              if (res.statusCode === 401)
+              util.reload()
+              that.search()
+              wx.getStorage({
+                key: 'token',
+                success: function (res) {
+                  that.setData({
+                    token: res.data
+                  })
+                },
+              })
             }
           },
           fail:function(res){

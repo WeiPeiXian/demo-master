@@ -6,17 +6,17 @@
     </view>
     <view class="login-from">
 
-    <view class="inputView">
+    <view  class="inputView">
        <!-- <image class="nameImage" src="../../image/name.png"></image>   -->
        <label class="loginLab">账号</label>
-       <input class="inputText" auto-focus='true' placeholder="请输入账号" bindinput="phoneInput" />
+       <input value='{{username}}' cursor-spacing="100" class="inputText" auto-focus='true' placeholder="请输入账号" bindinput="phoneInput" />
     </view>
     <view class="line"></view>
 
     <view class="inputView">
        <!-- <image class="nameImage" src="../../image/key.png"></image>   -->
        <label class="loginLab">密码</label>
-       <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+       <input value='{{password}}'cursor-spacing="100" class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
     </view>
     <view class="line"></view>
 

@@ -92,7 +92,7 @@ Page({
           teacherid: res.data
         })
         var arr = [
-          'http://api.changename.xin:8080/newhelp/api/historyArchives/',
+          'https://api.uestcsise.cn/newhelp/api/historyArchives/',
           that.data.teacherid
         ]
         var str = arr.join('')
@@ -194,7 +194,7 @@ Page({
         console.log(res.data)
         if ((that.data.index1 != 0) || (that.data.index2 != 0) || (that.data.index3 != 0)) {
           wx.request({
-            url: 'http://api.changename.xin:8080/newhelp/api/historyArchives',
+            url: 'https://api.uestcsise.cn/newhelp/api/historyArchives',
             header: {
               "Authorization": that.data.token,
             },

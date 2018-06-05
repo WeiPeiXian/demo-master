@@ -27,17 +27,22 @@
 					<view class='firstPart'>
             <view class='flex-column'>
               <view class='flex-item' >{{item.name}}</view>
-              <view class='flex-item' style='color:grey'>{{item.studentId}}</view>
+              <view class='flex-item' style='margin-top:20rpx;color:grey;font-size:20rpx' >{{item.studentId}}</view>
             </view>
           </view>
           <view class='secondPart '>
-            <view class='flex-column' ><view class='flex-item' style='color:grey'>{{item.helpType}}</view>
-            <view class='flex-item' style='color:grey'>{{item.attentionType}}
-            </view>
+            
+            {{item.helpType}}
+          </view>
+          <view class='thirdPart'>
+            
+            <view class='flex-column' >
+              <view class='flex-item' >{{item.attentionType}}</view>
+              <view class='flex-item' style='margin-top:20rpx;color:grey;font-size:20rpx' >{{item.destoryingTime}}</view>
+              
             </view>
           </view>
-          <view class='thirdPart'>{{item.destoryingTime}}</view>
-			</view>
+      </view>
       <view class='line'></view>
 		</block>
 	</view>

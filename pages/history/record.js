@@ -103,7 +103,7 @@ Page({
         })
         var i = that.data.index
         var recordname = encodeURIComponent(that.data.array[i])
-        var str = 'http://api.changename.xin:8080/newhelp/api/historyRecords/' + recordname + '/' + that.data.hArchiveId
+        var str = 'https://api.uestcsise.cn/newhelp/api/historyRecords/' + recordname + '/' + that.data.hArchiveId
         that.setData({
           url: str
         })

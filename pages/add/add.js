@@ -118,7 +118,7 @@ Page({
           token: res.data
         })
         wx.request({
-        url: 'http://api.change.xin:8080/newhelp/api/archiveStudent',
+          url: 'https://api.uestcsise.cn/newhelp/api/archiveStudent',
         header: {
           "Authorization": that.data.token,
         },

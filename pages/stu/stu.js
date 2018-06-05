@@ -3,10 +3,9 @@ const app = getApp()
 var util = require('../../utils/util.js')
 
 var template = require('../../template2/template2.js');
-var api = 'http://api.changename.xin:8080/newhelp/api/baseStudent/all/';
+var api = 'https://api.uestcsise.cn/newhelp/api/baseStudent/all/';
 var studentid = '';
-var inputinfo = "";  
-
+var inputinfo = "";
 Page({
   data: {
     currentTab: 0,
@@ -261,7 +260,7 @@ Page({
           success: function (res) {
             studentid = res.data
             wx.request({
-              url: 'http://api.changename.xin:8080/newhelp/api/archiveStudent/' + studentid,
+              url: 'https://api.uestcsise.cn/newhelp/api/archiveStudent/' + studentid,
               header: {
                 "Authorization": that.data.token
               },
@@ -332,7 +331,7 @@ Page({
     var that = this
     console.log(that.data.token, studentid, inputinfo, that.data.teacher)
     wx.request({
-      url: 'http://api.changename.xin:8080/newhelp/api/archiveStudent',
+      url: 'https://api.uestcsise.cn/newhelp/api/archiveStudent',
       header: {
         'Authorization': that.data.token,
         'Content-Type': 'application/json'

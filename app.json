@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/now/now",
     "pages/record/add",
     "pages/revise/revise",
     "pages/record/revise",
@@ -8,11 +9,11 @@
     "pages/record/record",
     "pages/history/record",
     "pages/add/add",
-    "pages/now/now",
     "pages/stu/stu",
     "pages/history/history",
     "pages/record/message",
-    "pages/history/message"
+    "pages/history/message",
+    "pages/base/base"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,6 +37,12 @@
         "pagePath": "pages/history/history",
         "iconPath": "image/yuyue.png",
         "selectedIconPath": "image/yuyue1.png"
+      },
+      {
+        "text": "基本学生信息",
+        "pagePath": "pages/base/base",
+        "iconPath": "imgs/category.png",
+        "selectedIconPath": "imgs/category_on.png"
       }
     ]
   }
