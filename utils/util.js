@@ -30,15 +30,8 @@ function reload(){
         },
         success: function (res) {
           if (res.data.success == true) {
-            wx.setStorage({
-              key: 'teacherId',
-              data: username,
-            })
-            wx.setStorage({
-              key: 'password',
-              data: password,
-            })
             var that2 = res.data
+            console.log(res.data)
             wx.showToast({
               title: '重新登录成功',
               icon: 'success',

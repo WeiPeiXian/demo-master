@@ -7,7 +7,6 @@ Page({
   data: {
     username: '',
     password: '',
-    
   },
   onLoad(){
     var that = this;
@@ -135,6 +134,7 @@ Page({
             })
           }
           else {
+            console.log(res.data)
             wx.showToast({
               title:"登录失败",
               icon:"fail"

@@ -1,2 +1,79 @@
-<!--pages/base/base.wxml-->
-<text>pages/base/base.wxml</text>
+<import src="../../back/back.wxml"/>
+<template is="back"/>
+
+<view class="navbar" style="top:0;position:fixed;width: 750rpx;">
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>    
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">    
+      <view class="dialog-title">输入档理由</view>    
+      <view class="line-top"></view>    
+      <view class="input-view">   
+      <view class="input01"></view>  
+ <textarea class="input-style" type="text"   placeholder="输入除档理由"  
+  bindblur="input_content"  value="{{address}}" />  
+</view>    
+</view>
+<!--对话框按钮-->    
+<view class="line-top">      
+</view>    
+<view class="btn-view">    
+  <view class="btn-cancel" bindtap="click_cancel">      
+          取 消    
+  </view>    
+  <view class="btn-line">    
+  </view>    
+  <view class="btn-cancel" bindtap="click_ok">      
+          确 定    
+  </view>    
+</view>    
+</view>   
+
+<view class="mcontainer flex-wrap flex-direction-row">
+  <view class="flex-row " style="top:0;position:fixed;width: 750rpx;">
+     <view class="section flex-view-item">
+      <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+        <view class="picker">{{array1[index1]}}</view>
+      </picker>
+    </view> 
+    <view class="section flex-view-item">
+      <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+        <view class="picker">{{array2[index2]}}</view>
+      </picker>
+    </view>
+    <view class="section flex-view-item">
+      <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+        <view class="picker">{{array3[index3]}}</view>
+    </picker>
+    </view>
+  </view>
+  <view class='dingbu'>{{   }}</view>
+  <view class="content sam flex-item">
+  <view class='line'></view>  
+		<block wx:for="{{studentlist}}" wx:for-index="i" wx:key="studentId">
+			<view class="lieBiao" data-studentid='{{item.studentId}}'  style="color:{{item.highlight?'#e98f36':'#black'}}"  bindtap='message'>
+					<view class='firstPart'>
+            <view class='flex-column'>
+              <view class='flex-item' >{{item.name}}</view>
+              <view class='flex-item' style='margin-top:20rpx;color:grey;font-size:20rpx' >{{item.studentId}}</view>
+            </view>
+          </view>
+          <view class='secondPart '>
+            
+            {{item.helpType}}
+          </view>
+          <view class='thirdPart'>
+            
+            <view class='flex-column' >
+              <view class='flex-item' >{{item.attentionType}}</view>
+              <view class='flex-item' style='margin-top:20rpx;color:grey;font-size:20rpx' >{{item.lastRecordTime}}</view>
+              
+            </view>
+          </view>
+			</view>
+      <view class='line'></view>
+		</block>
+	</view>
+  <view class='lieBiao'>{{   }}</view>
+  <view style='position:fixed; bottom:0;width: 750rpx;'>
+    <button class='btn' bindtap='two'>增加</button>
+  </view>
+</view>

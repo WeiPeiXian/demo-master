@@ -127,11 +127,21 @@ Page({
 
                 }
                 else {
-                  console.log(res)
-                  if (res.statusCode === 401)
-                  
-                  util.reload()
-                  that.getlist()
+                  if (res.statusCode === 401) {
+                    var token1 = that.data.token;
+                    util.reload()
+
+                    wx.getStorage({
+                      key: 'token',
+                      success: function (res) {
+                        that.setData({
+                          token: res.data
+                        })
+                        
+                      },
+                    })
+
+                  }
                 }
               },
               fail: function (res) {
@@ -217,17 +227,25 @@ Page({
               console.log(res.data.data)
             }
             else {
-              if (res.statusCode === 401)
-              util.reload()
-              that.search()
-              wx.getStorage({
-                key: 'token',
-                success: function (res) {
-                  that.setData({
-                    token: res.data
-                  })
-                },
-              })
+              
+              if (res.statusCode === 401){
+                var token1 = that.data.token;
+                util.reload()
+                
+                wx.getStorage({
+                  key: 'token',
+                  success: function (res) {
+                    that.setData({
+                      token: res.data
+                    })
+                    if(res.data !== token1){
+                      that.search()
+                    }
+                  },
+                })
+                
+              }
+              
             }
           },
           fail:function(res){

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/base/base",
     "pages/now/now",
     "pages/record/add",
     "pages/revise/revise",
@@ -12,8 +13,7 @@
     "pages/stu/stu",
     "pages/history/history",
     "pages/record/message",
-    "pages/history/message",
-    "pages/base/base"
+    "pages/history/message"
   ],
   "window": {
     "backgroundTextStyle": "light",
